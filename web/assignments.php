@@ -33,7 +33,7 @@
       <div class="week">
         <h2>Week 02</h2>
         <a href="teach02.html" class="btn btn-primary">Teach 02</a>
-        <a href="index.html" class="btn btn-secondary">Prove 02 - Personal Homepage</a>
+        <a href="index.php" class="btn btn-secondary">Prove 02 - Personal Homepage</a>
       </div>
       <div class="week">
         <h2>Week 03</h2>
