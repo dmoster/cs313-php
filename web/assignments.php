@@ -17,7 +17,7 @@
 
       <nav id="nav">
         <ul>
-          <li><a href="index.html" class="btn">Home</a></li>
+          <li><a href="index.php" class="btn">Home</a></li>
           <li><a href="#" class="btn">Assignments</a></li>
         </ul>
       </nav>
@@ -97,6 +97,8 @@
       </div>
     </div>
   </main>
+
+  <?php include 'src/footer.php'; ?>
 
   <script src="src/teach02.js"></script>
 </body>

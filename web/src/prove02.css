@@ -42,6 +42,10 @@ hr {
   justify-content: space-around;
 }
 
+img {
+  border-radius: 5px;
+}
+
 #intro img:hover {
   filter: drop-shadow(5px 5px 5px #222);
 }
@@ -67,13 +71,13 @@ nav {
 .btn {
   padding: 10px;
   margin: 10px;
-  border: 3px outset lightgrey;
+  border: none;
   border-radius: 5px;
   text-align: center;
 }
 
 .btn:hover {
-  border: 3px inset lightgrey;
+  filter: drop-shadow(5px 5px 5px #222);
 }
 
 .btn {
@@ -83,12 +87,12 @@ nav {
 
 .btn-primary {
   color: white;
-  background-color: green;
+  background-color: mediumseagreen;
 }
 
 .btn-secondary {
   color: white;
-  background-color: purple;
+  background-color: violet;
 }
 
 #nav a, .week a, #social a {
@@ -103,17 +107,12 @@ nav {
 
 #nav a {
   color: white;
-  background-color: #0000ff;
-}
-
-#nav a:hover {
-  color: #e6e6ff;
-  background-color: #0000e6;
+  background-color: slateblue;
 }
 
 .blockquote {
   padding: 10px;
-  border-left: 3px solid purple;
+  border-left: 3px solid violet;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,9 +147,19 @@ main {
   padding: 10px;
 }
 
+footer {
+  background-color: orange;
+}
+
+footer h2 {
+  text-align: center;
+}
+
 .footer-content {
+  height: 100%;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #social ul {
@@ -162,6 +171,10 @@ main {
 #social li {
   color: white;
   display: block;
+}
+
+#social a {
+  margin: 10px 0;
 }
 
 #twitter {
