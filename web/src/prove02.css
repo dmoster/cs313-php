@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', 'Open Sans', 'Roboto', sans-serif;
+  color: white;
+}
+
+.content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+}
+
+header {
+  text-align: center;
+  background-color: tomato;
+}
+
+hr {
+  color: inherit;
+}
+
+#intro {
+  background-color: dodgerblue;
+}
+
+#intro article {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+#intro a {
+  color: inherit;
+}
+
+#intro a:hover {
+  color: blue;
+}
+
+#intro img:hover {
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+#schedule {
+  background-color: violet;
+}
+
+#you {
+  background-color: orange;
+}
+
+#me {
+  background-color: mediumseagreen;
+}
+
+nav {
+  width: 100%;
+}
+
+#nav ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px;
+  margin: 10px;
+  border: 3px outset lightgrey;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+  border: 3px inset lightgrey;
+}
+
+.btn {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.btn-primary {
+  color: white;
+  background-color: green;
+}
+
+.btn-secondary {
+  color: white;
+  background-color: purple;
+}
+
+#nav a, .week a, #social a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+#nav li {
+  display: inline-block;
+}
+
+#nav a {
+  color: white;
+  background-color: #0000ff;
+}
+
+#nav a:hover {
+  color: #e6e6ff;
+  background-color: #0000e6;
+}
+
+.blockquote {
+  padding: 10px;
+  border-left: 3px solid purple;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+th, td {
+  padding: 20px 30px 20px 0;
+}
+
+table caption {
+  text-align: left;
+}
+
+main {
+  background-color: dodgerblue;
+}
+
+.week {
+  padding: 10px;
+}
+
+.footer-content {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#social ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#social li {
+  color: white;
+  display: block;
+}
+
+#twitter {
+  background-color: #1da1f2;
+}
+
+#twitter:hover {
+  color: #e7f5fe;
+  background-color: #0e9af1;
+}
+
+#linkedin {
+  background-color: #007bb5;
+}
+
+#linkedin:hover {
+  color: #e6f7ff;
+  background-color: #006999;
+}
+
+#github {
+  background-color: #000;
+}
+
+#github:hover {
+  color: #f2f2f2;
+  background-color: #0d0d0d;
+}
+
+@media only screen and (min-width: 600px) {
+  #assignment-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .week h2 {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #assignment-grid {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+}
