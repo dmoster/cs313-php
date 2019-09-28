@@ -151,15 +151,8 @@ footer {
   background-color: orange;
 }
 
-footer h2 {
-  text-align: center;
-}
-
-.footer-content {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+#profile, #social {
+  margin: 40px 0;
 }
 
 #social ul {
@@ -218,6 +211,17 @@ footer h2 {
 
   .week h2 {
     text-align: center;
+  }
+
+  footer h2 {
+    text-align: center;
+  }
+  
+  .footer-content {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 
