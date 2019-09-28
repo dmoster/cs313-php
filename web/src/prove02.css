@@ -6,7 +6,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', 'Open Sans', 'Roboto', sans-serif;
+  font-family: 'Open Sans', 'Roboto', sans-serif;
   color: white;
 }
 
@@ -26,12 +26,7 @@ hr {
 }
 
 #intro {
-  background-color: dodgerblue;
-}
-
-#intro article {
-  display: grid;
-  grid-template-columns: 70% 30%;
+  margin: 20px 0;
 }
 
 #intro a {
@@ -42,20 +37,21 @@ hr {
   color: blue;
 }
 
+.img-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 #intro img:hover {
   filter: drop-shadow(5px 5px 5px #222);
 }
 
-#schedule {
-  background-color: violet;
-}
-
-#you {
-  background-color: orange;
-}
-
-#me {
+article {
   background-color: mediumseagreen;
+}
+
+article .content {
+  max-width: 800px;
 }
 
 nav {
@@ -144,6 +140,10 @@ main {
   background-color: dodgerblue;
 }
 
+.lead {
+  font-size: 1.2em;
+}
+
 .week {
   padding: 10px;
 }
@@ -192,6 +192,12 @@ main {
 }
 
 @media only screen and (min-width: 600px) {
+  #intro {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+  }
+
   #assignment-grid {
     display: grid;
     grid-template-columns: 50% 50%;
