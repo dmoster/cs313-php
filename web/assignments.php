@@ -37,7 +37,7 @@
       </div>
       <div class="week">
         <h2>Week 03</h2>
-        <a href="#" class="btn btn-primary">Teach 03 - Coming Soon</a>
+        <a href="teach03.php" class="btn btn-primary">Teach 03</a>
         <a href="#" class="btn btn-secondary">Prove 03 - Coming Soon</a>
       </div>
       <div class="week">
