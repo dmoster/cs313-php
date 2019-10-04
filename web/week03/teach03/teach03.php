@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="src/teach03.css">
+  <link rel="stylesheet" href="teach03.css">
 
   <title>PHP Form Handling</title>
 </head>
 <body>
 
-<form action="src/formhandler03.php" method="POST">
+<form action="formhandler03.php" method="POST">
   Name
   <input type="text" placeholder="John Doe" name="name">
   Email
