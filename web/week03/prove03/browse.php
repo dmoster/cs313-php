@@ -3,7 +3,7 @@
 session_start();
 require_once('items.php');
 
-$_SESSION['test'] = 521600;
+
 
 ?>
 
@@ -40,7 +40,9 @@ $_SESSION['test'] = 521600;
 
       ?>
 
-      <div id="session-caller"></div>
+      <div id="session-caller">
+        <?php $_SESSION['test'] = 521600; ?>
+      </div>
     </div>
   </main>
     
