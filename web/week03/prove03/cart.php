@@ -2,7 +2,7 @@
 
 session_start();
 
-echo $_SESSION['test'];
+
 
 ?>
 
@@ -23,7 +23,7 @@ echo $_SESSION['test'];
     <div class="content">
       <h1>Cart</h1>
 
-
+      <?php echo $_SESSION['test']; ?>
     </div>
   </main>
     
