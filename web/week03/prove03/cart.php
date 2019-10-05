@@ -23,7 +23,7 @@ session_start();
     <div class="content">
       <h1>Cart</h1>
 
-      <?php echo $_SESSION['test']; ?>
+      <?php echo $_SESSION['itemsInCart']; ?>
     </div>
   </main>
     

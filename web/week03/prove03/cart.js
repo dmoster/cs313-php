@@ -2,7 +2,7 @@ function updateCart() {
   var itemString = JSON.stringify(itemsInCart);
   var sessionCaller = document.getElementById('session-caller');
 
-  
+  sessionCaller.innerHTML = '<?php $_SESSION["itemsInCart"] = "' + itemString + '"; ?>';
 }
 
 
