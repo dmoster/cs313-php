@@ -2,7 +2,7 @@
 
 session_start();
 
-
+echo $_SESSION['test'];
 
 ?>
 
@@ -20,7 +20,11 @@ session_start();
   <?php require 'header.php'; ?>
 
   <main>
+    <div class="content">
+      <h1>Cart</h1>
 
+
+    </div>
   </main>
     
   <?php require 'footer.php'; ?>

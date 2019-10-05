@@ -11,18 +11,30 @@ html, body {
 }
 
 body {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.content {
+  max-width: 1000px;
+  margin: auto;
+}
+
 /* Header */
+header {
+  height: 40px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  padding: 10px 0;
+}
+
 header nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 header nav ul li {
@@ -40,6 +52,59 @@ header nav a:hover {
   color: white;
   background-color: #2e2e2e;
 }
+
+#item-counter {
+  color: white;
+  background-color: orange;
+  padding: 0 3px;
+  margin-left: 5px;
+  border-radius: 50px;
+  display: none;
+}
+
+/* Main */
+main {
+  padding: 50px 0 30px;
+}
+
+  /* browse.php */
+  .item {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+
+  .item-details {
+    display: grid;
+    grid-template-columns: 200px 500px 90px 97px;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .item img {
+    max-width: 200px;
+    max-height: 120px;
+  }
+
+  .item-cost {
+    text-align: right;
+    font-size: 1.2em;
+  }
+
+  .item button {
+    color: mediumseagreen;
+    padding: 10px;
+    border: 1px solid mediumseagreen;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .item button:hover {
+    color: white;
+    background-color: mediumseagreen;
+  }
 
 /* Footer */
 footer {
