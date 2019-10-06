@@ -33,5 +33,7 @@ $monitor = new Item('ASUS 27-inch 1440p Monitor', "FreeSync at WQHD all day long
 $keyboard = new Item('Razer BlackWidow Chroma V2 Keyboard', "A favorite for esports hopefuls, your fingers will love this RGB keyboard.", 133, 'images/keyboard.jpg');
 
 $items = array($iphone, $ryzen, $mouse, $ssd, $monitor, $keyboard);
+$itemsInCart = array();
+$_SESSION['itemsInCart'] = array();
 
 ?>

@@ -92,7 +92,12 @@ main {
     font-size: 1.2em;
   }
 
+  .item form {
+    width: 100%;
+  }
+
   .item button {
+    width: 100%;
     color: mediumseagreen;
     padding: 10px;
     border: 1px solid mediumseagreen;
