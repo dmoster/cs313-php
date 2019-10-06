@@ -25,10 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($_POST['item5']) {
     array_push($_SESSION['itemsInCart'], $items[5]);
   }
-
-  for ($i = 0; $i < count($_SESSION['itemsInCart']); $i++) {
-    echo $_SESSION['itemsInCart'][$i]->getName();
-  }
 }
 
 ?>
@@ -44,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 
-  <!-- <?php require 'header.php'; ?> -->
+  <?php require 'header.php'; ?>
 
   <main>
     <div class="content">  
