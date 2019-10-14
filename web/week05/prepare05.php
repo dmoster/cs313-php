@@ -20,10 +20,18 @@ catch (PDOException $e) {
   die();
 }
 
+
 foreach($db->query('SELECT username, user_password FROM users') as $row) {
   echo 'user: ' . $row['username'];
   echo ' password: ' . $row['user_password'];
   echo '<br/>';
 }
+
+$id = 2;
+$name = 'dmoster';
+$stmt = $db->prepare('SELECT * FROM users WHERE user_id=:id AND username=:name');
+$stmt->execute(array(':name' => $name, ':id' => $id));
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo $rows;
 
 ?>
