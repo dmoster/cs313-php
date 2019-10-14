@@ -32,6 +32,6 @@ $name = 'dmoster';
 $stmt = $db->prepare('SELECT * FROM users WHERE user_id=:id AND username=:name');
 $stmt->execute(array(':name' => $name, ':id' => $id));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $rows;
+echo $rows[0];
 
 ?>
