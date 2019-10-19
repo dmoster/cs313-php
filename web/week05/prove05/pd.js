@@ -50,5 +50,6 @@ var username = document.getElementById('username').innerHTML;
 
 if (!deviceDisplay.innerHTML) {
   getDeviceJSON(username);
+  console.log(locations.length);
   displayDeviceGrid();
 }
