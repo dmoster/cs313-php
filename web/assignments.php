@@ -48,7 +48,7 @@
       <div class="week">
         <h2>Week 05</h2>
         <a href="week05/team05/read_scriptures.php" class="btn btn-primary">Teach 05 - Querying from PHP</a>
-        <a href="#" class="btn btn-secondary">Prove 05 - Device Management Querying</a>
+        <a href="week05/prove05/" class="btn btn-secondary">Prove 05 - Device Management Querying</a>
       </div>
       <div class="week">
         <h2>Week 06</h2>
