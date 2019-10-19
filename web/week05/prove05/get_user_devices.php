@@ -7,14 +7,14 @@ $db = getDatabase();
 
 $username = "dmoster";//$_GET['username'];
 
-echo '{ "username": "' . $username . '" }';
-
 $user_row = $db->prepare("SELECT user_id FROM users WHERE username='$username' LIMIT 1");
 $user_row->execute();
 
 $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
 $user_id = $user['user_id'];
+
+echo '{ "username": "' . $username . '" }';
 
 // $location_row = $db->prepare("SELECT location_id, location_name FROM locations");
 // $location_row->execute();
