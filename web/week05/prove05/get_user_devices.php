@@ -30,7 +30,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
   $floor_row = $db->prepare("SELECT floor_id, floor_name FROM floors WHERE location_id=$location_id");
   $floor_row->execute();
 
-  // while ($floor = $floor_row->fetch(PDO::FETCH_ASSOC)) {
+  while ($floor = $floor_row->fetch(PDO::FETCH_ASSOC)) {
   //   $floor_id = $floor['floor_id'];
   //   $floor_name = $floor['floor_name'];
 
@@ -58,13 +58,13 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
   //     }
   
   //     $locationStr += '] },';
-  //   }
-  
-  //   $locationStr += '] },';
   }
   
-  $locationStr += " ]";
+  $locationStr += '] },';
+}
   
-  echo $locationStr;
+$locationStr += " ]";
+  
+echo $locationStr;
   
   ?>
