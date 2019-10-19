@@ -79,7 +79,7 @@ $lastname = $user['lastname'];
 
   </div>
 
-
+  <script src="get_device_json.js"></script>
   <script src="pd.js"></script>
   <script src="local_search.js"></script>
 
