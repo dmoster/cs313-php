@@ -22,9 +22,10 @@ $locationStr = "[ ";
 while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
   $location_id = $location['location_id'];
   $location_name = $location['location_name'];
-  $locationStr = $locationStr . '{ "building": "' . $location_name . '", "floors": [ ';
+  $locationStr = $locationStr . '{
+    "building": "' . $location_name . '",
+    "floors": [ ';
     
-    echo $locationStr;
   $floor_row = $db->prepare("SELECT floor_id, floor_name FROM floors WHERE location_id=$location_id");
   $floor_row->execute();
 
@@ -32,7 +33,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
     $floor_id = $floor['floor_id'];
     $floor_name = $floor['floor_name'];
 
-    $locationStr += '{ "name": "' . $floor_name . '",
+    $locationStr = $locationStr . '{ "name": "' . $floor_name . '",
         "devices": [ ';
   
     $device_row = $db->prepare("SELECT * FROM devices WHERE floor_id=$floor_id");
@@ -46,7 +47,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
       $device_type = $device['device_type'];
       $device_canFrame = $device['device_canFrame'];
 
-      $locationStr += '{
+      $locationStr = $locationStr . '{
           "address": "' . $device_address . '",
           "label": "' . $device_description . '",
           "notes": "' . $device_notes . '",
@@ -55,13 +56,13 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
         }';
       }
   
-    $locationStr += '] },';
+    $locationStr = $locationStr . '] },';
   }
   
-  $locationStr += '] },';
+  $locationStr = $locationStr . '] },';
 }
   
-$locationStr += " ]";
+$locationStr = $locationStr . " ]";
   
 //echo $locationStr;
   
