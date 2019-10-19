@@ -73,7 +73,7 @@ $lastname = $user['lastname'];
   
     <footer>
   
-      <a href="" target="_blank">[website here]</a>
+      <a href="https://github.com/dmoster" target="_blank">github.com/dmoster</a>
       <p class="copyright">&copy; 2019 Mostermind</p>
   
     </footer>
@@ -81,6 +81,10 @@ $lastname = $user['lastname'];
   </div>
 
 
+  <script>
+    let username = $username;
+    console.log(username);
+  </script>
   <script src="pd.js"></script>
   <script src="local_search.js"></script>
 
