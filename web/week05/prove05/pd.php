@@ -29,7 +29,6 @@ $lastname = $user['lastname'];
   <link rel="stylesheet" href="pd.css"/>
   <script src="https://kit.fontawesome.com/599e60a037.js" crossorigin="anonymous"></script>
   
-  <script src="locations.js"></script>
   <script src="device_grid.js"></script>
   <script src="device_table.js"></script>
 

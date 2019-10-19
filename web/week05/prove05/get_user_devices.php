@@ -64,4 +64,6 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
 
 $locationStr += " ]";
 
+echo $locationStr;
+
 ?>
