@@ -4,8 +4,9 @@ function getDeviceJSON(username) {
 
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+      console.log("JSON: " + this.responseText);
       locations = JSON.parse(this.responseText);
-      console.log(locations);
+      console.log("Locations: " + locations);
     }
   };
 
