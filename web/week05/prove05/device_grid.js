@@ -85,7 +85,7 @@ function addLocationGrid(location) {
 
 
 // Populate screen with a list of devices
-function displayDeviceGrid() {
+function displayDeviceGrid(locations) {
 
   locationIt = floorIt = deviceIt = 0;
 

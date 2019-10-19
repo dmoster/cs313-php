@@ -86,7 +86,7 @@ function addLocationTable(location) {
 
 
 // Populate screen with a list of devices
-function displayDeviceTable() {
+function displayDeviceTable(locations) {
   
   locationIt = floorIt = deviceIt = 0;
 
