@@ -4,11 +4,12 @@ function getDeviceJSON(username) {
 
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      locations = JSON.parse(this.responseText);
-      return locations;
+      var locations = JSON.parse(this.responseText);
     }
   };
 
   xmlhttp.open("GET", "get_user_devices.php?username=" + username, true);
   xmlhttp.send();
+
+  return locations;
 }
