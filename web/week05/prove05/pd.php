@@ -62,7 +62,7 @@ $lastname = $user['lastname'];
     <main>
   
       <div id="intro">
-        <h1><?=$firstname;?>'s Device Management</h1>
+        <h1><span id="username" style="display: hidden;"><?=$username?></span><?=$firstname;?>'s Device Management</h1>
         <p class="lead">Below are all items listed in <?=$firstname;?> <?=$lastname;?>'s database.</p>
       </div>
   
@@ -80,11 +80,7 @@ $lastname = $user['lastname'];
 
   </div>
 
-
-  <script>
-    let username = $username;
-    console.log(username);
-  </script>
+  
   <script src="pd.js"></script>
   <script src="local_search.js"></script>
 
