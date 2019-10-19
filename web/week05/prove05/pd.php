@@ -7,7 +7,7 @@ $db = getDatabase();
 
 $user_id = $_GET['user'];
 
-$user_row = $db->prepare("SELECT firstname, lastname FROM users WHERE username=$user_id");
+$user_row = $db->prepare("SELECT firstname, lastname FROM users WHERE username='$user_id'");
 $user_row->execute();
 
 // $user = $user_row->fetch(PDO::FETCH_ASSOC);
