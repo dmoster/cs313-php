@@ -66,6 +66,6 @@ $user_id = $user['user_id'];
             // $locationStr += " ]";
             
             // echo $locationStr;
-            echo '{ "user_id": "' . $username . '" }';
+            echo '{ "user_id": "' . $user_id . '" }';
             
             ?>
