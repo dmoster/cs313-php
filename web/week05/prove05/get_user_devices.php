@@ -22,7 +22,7 @@ $locationStr = "[ ";
 while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
   $location_id = $location['location_id'];
   $location_name = $location['location_name'];
-
+echo $locationStr;
   $locationStr += '{
       "building": "' . $location_name . '",
       "floors": [ ';
@@ -65,6 +65,6 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
   
 $locationStr += " ]";
   
-echo $locationStr;
+//echo $locationStr;
   
   ?>
