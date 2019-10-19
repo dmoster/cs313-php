@@ -37,7 +37,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
     $locationStr += '{ "name": "' . $floor_name . '",
         "devices": [ ';
   
-    $device_row = $db->prepare("SELECT device_id, device_description, device_notes, device_address, device_type, device_canFrame FROM devices WHERE floor_id=$floor_id");
+    $device_row = $db->prepare("SELECT * FROM devices WHERE floor_id=$floor_id");
     $device_row->execute();
 
   //   while ($device = $device_row->fetch(PDO::FETCH_ASSOC)) {
