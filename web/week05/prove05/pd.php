@@ -2,8 +2,8 @@
 
 session_start();
 
-require "db_connect.php";
-$db = getDatabase();
+// require "db_connect.php";
+// $db = getDatabase();
 
 $user_id = $_GET['user'];
 
@@ -81,7 +81,7 @@ $lastname = $user['lastname'];
   </div>
 
 
-  <!-- <script src="pd.js"></script> -->
+  <script src="pd.js"></script>
   <script src="local_search.js"></script>
 
 </body>
