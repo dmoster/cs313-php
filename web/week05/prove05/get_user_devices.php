@@ -26,7 +26,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
     "building": "' . $location_name . '",
     "floors": [ ';
     
-    echo $locationStr;
+    echo $location_name;
   $floor_row = $db->prepare("SELECT floor_id, floor_name FROM floors WHERE location_id=$location_id");
   $floor_row->execute();
 
