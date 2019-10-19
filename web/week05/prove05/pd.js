@@ -13,6 +13,7 @@ function copyText(refButton) {
 
 // Declare global variables
 var devices = null;
+var locations = null;
 var locationIt = floorIt = deviceIt = 0;
 var navString = devicesString = '';
 
@@ -46,5 +47,6 @@ class Device {
 // Initial load
 var deviceDisplay = document.getElementById('device-list');
 if (!deviceDisplay.innerHTML) {
+  getDeviceJSON();
   displayDeviceGrid();
 }

@@ -1,23 +1,27 @@
 <?php
+
+session_start();
+
 require "db_connect.php";
 $db = getDatabase();
 
-$id = $_GET["id"];
+$device_id = $_GET["device_id"];
 
-$search_statement = $db->prepare('SELECT * FROM scriptures WHERE id=:id');
-$search_statement->bindValue(':id', $id, PDO::PARAM_STR);
+$search_statement = $db->prepare('SELECT * FROM devices WHERE device_id=:device_id');
+$search_statement->bindValue(':device_id', $device_id, PDO::PARAM_STR);
 $search_statement->execute();
 $row = $search_statement->fetch(PDO::FETCH_ASSOC);
-$content = $row['content'];
+$device_notes = $row['device_notes'];
 
 function getTitle($row) {
-    $book = $row['book'];
-    $chapter = $row['chapter'];
-    $verse = $row['verse'];
-    return "$book $chapter:$verse";
+    $device_description = $row['device_description'];
+    $device_notes = $row['device_notes'];
+    $device_address = $row['device_address'];
+    return "$device_description $device_notes:$device_address";
 }
 
 $title = getTitle($row);
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +34,6 @@ $title = getTitle($row);
 </head>
 <body>
     <h1><?= $title; ?></h1>
-    <p><?= $content; ?></p>
+    <p><?= $device_notes; ?></p>
 </body>
 </html>

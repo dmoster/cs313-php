@@ -1,3 +1,22 @@
+<?php
+
+session_start();
+
+require "db_connect.php";
+$db = getDatabase();
+
+$user_id = $_GET['user'];
+
+$user_row = $db->prepare("SELECT firstname, lastname FROM users WHERE username=$user_id");
+$user_row->execute();
+
+$user = $user_row->fetch(PDO::FETCH_ASSOC);
+
+$firstname = $user['firstname'];
+$lastname = $user['lastname'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +33,7 @@
   <script src="device_grid.js"></script>
   <script src="device_table.js"></script>
 
-  <title>[company name] Device Management</title>
+  <title><?=$firstname;?> <?=$lastname;?>'s Device Management</title>
 
 </head>
 <body>
@@ -43,8 +62,8 @@
     <main>
   
       <div id="intro">
-        <h1>[intro title here]</h1>
-        <p class="lead">[intro description here]</p>
+        <h1><?=$firstname;?> <?=$lastname;?>'s Device Management</h1>
+        <p class="lead">Below are all items listed in <?=$firstname;?>'s database.</p>
       </div>
   
       <div id="device-list"></div>
@@ -55,7 +74,7 @@
     <footer>
   
       <a href="" target="_blank">[website here]</a>
-      <p class="copyright">&copy; [copyright here]</p>
+      <p class="copyright">&copy; 2019 Mostermind</p>
   
     </footer>
 
@@ -63,7 +82,7 @@
 
 
   <script src="pd.js"></script>
-  <script src="search.js"></script>
+  <script src="local_search.js"></script>
 
 </body>
 </html>
