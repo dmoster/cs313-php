@@ -14,7 +14,7 @@ $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
 $user_id = $user['user_id'];
 
-$location_row = $db->prepare("SELECT location_id, location_name FROM locations WHERE user_id=$user_id");
+$location_row = $db->prepare("SELECT location_id, location_name FROM locations");
 $location_row->execute();
 
 
@@ -28,7 +28,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
     "building": "' . $location_name . '",
     "floors": [ ';
 
-  $floor_row = $db->prepare("SELECT floor_id, floor_name FROM floors WHERE location_id=$location_id");
+  $floor_row = $db->prepare("SELECT floor_id, floor_name FROM floors");
   $floor_row->execute();
 
   while ($floor = $floor_row->fetch(PDO::FETCH_ASSOC)) {
@@ -38,7 +38,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
     $locationStr += '{ "name": "' . $floor_name . '",
       "devices": [ ';
 
-    $device_row = $db->prepare("SELECT device_id, device_description, device_notes, device_address, device_type, device_canFrame FROM devices WHERE floor_id=$floor_id");
+    $device_row = $db->prepare("SELECT device_id, device_description, device_notes, device_address, device_type, device_canFrame FROM devices");
     $device_row->execute();
 
     while ($device = $device_row->fetch(PDO::FETCH_ASSOC)) {
