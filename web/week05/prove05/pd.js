@@ -11,24 +11,8 @@ function copyText(refButton) {
 }
 
 
-function getDeviceJSON(username) {
-  
-  var xmlhttp = new XMLHttpRequest();
-
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      locations = JSON.parse(this.responseText);
-    }
-  };
-
-  xmlhttp.open("GET", "get_user_devices.php?username=" + username, true);
-  xmlhttp.send();
-}
-
-
 // Declare global variables
 var devices = null;
-var locations = null;
 var locationIt = floorIt = deviceIt = 0;
 var navString = devicesString = '';
 
@@ -64,8 +48,5 @@ var deviceDisplay = document.getElementById('device-list');
 var username = document.getElementById('username').innerHTML;
 
 if (!deviceDisplay.innerHTML) {
-  locations = new Array();
   getDeviceJSON(username);
-  console.log(locations.length);
-  displayDeviceGrid();
 }
