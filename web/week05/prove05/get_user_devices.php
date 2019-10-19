@@ -14,7 +14,7 @@ $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
 $user_id = $user['user_id'];
 
-$location_row = $db->prepare("SELECT location_id, location_name FROM locations WHERE user_id=$user_id");
+$location_row = $db->prepare("SELECT location_id, location_name FROM locations");
 $location_row->execute();
 
 
