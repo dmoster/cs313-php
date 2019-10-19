@@ -38,24 +38,24 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
     $locationStr += '{ "name": "' . $floor_name . '",
       "devices": [ ';
 
-    $device_row = $db->prepare("SELECT device_id, device_description, device_notes, device_address, device_type, device_canFrame FROM devices");
-    $device_row->execute();
+    // $device_row = $db->prepare("SELECT device_id, device_description, device_notes, device_address, device_type, device_canFrame FROM devices");
+    // $device_row->execute();
 
-    while ($device = $device_row->fetch(PDO::FETCH_ASSOC)) {
-      $device_id = $device['device_id'];
-      $device_description = $device['device_description'];
-      $device_notes = $device['device_notes'];
-      $device_address = $device['device_address'];
-      $device_type = $device['device_type'];
-      $device_canFrame = $device['device_canFrame'];
+    // while ($device = $device_row->fetch(PDO::FETCH_ASSOC)) {
+    //   $device_id = $device['device_id'];
+    //   $device_description = $device['device_description'];
+    //   $device_notes = $device['device_notes'];
+    //   $device_address = $device['device_address'];
+    //   $device_type = $device['device_type'];
+    //   $device_canFrame = $device['device_canFrame'];
 
-      $locationStr += '{
-        "address": "' . $device_address . '",
-        "label": "' . $device_description . '",
-        "notes": "' . $device_notes . '",
-        "type": "' . $device_type . '",
-        "canFrame": ' . $device_canFrame . '
-      }';
+    //   $locationStr += '{
+    //     "address": "' . $device_address . '",
+    //     "label": "' . $device_description . '",
+    //     "notes": "' . $device_notes . '",
+    //     "type": "' . $device_type . '",
+    //     "canFrame": ' . $device_canFrame . '
+    //   }';
     }
 
     $locationStr += '] },';
