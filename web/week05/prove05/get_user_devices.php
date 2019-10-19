@@ -66,6 +66,5 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
   $locationStr += " ]";
   
   echo $locationStr;
-  echo '{ "user_id": "' . $user_id . '" }';
   
   ?>
