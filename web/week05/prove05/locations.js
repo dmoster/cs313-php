@@ -12,7 +12,7 @@ let locations = [
             "notes": "",
             "type": "",
             "canFrame": false
-          }
+          },
         ]
       }
     ]
