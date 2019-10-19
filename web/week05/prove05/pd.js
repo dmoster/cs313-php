@@ -47,6 +47,6 @@ class Device {
 // Initial load
 var deviceDisplay = document.getElementById('device-list');
 if (!deviceDisplay.innerHTML) {
-  getDeviceJSON();
+  getDeviceJSON(username);
   displayDeviceGrid();
 }

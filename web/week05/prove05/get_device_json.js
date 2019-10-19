@@ -1,4 +1,4 @@
-function getDeviceJSON() {
+function getDeviceJSON(username) {
   
   var xmlhttp = new XMLHttpRequest();
 
@@ -9,5 +9,5 @@ function getDeviceJSON() {
   };
 
   xmlhttp.open("POST", "get_user_devices.php", true);
-  xmlhttp.send();
+  xmlhttp.send("username=" + username);
 }
