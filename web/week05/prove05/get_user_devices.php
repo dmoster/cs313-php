@@ -5,7 +5,7 @@ session_start();
 require "db_connect.php";
 $db = getDatabase();
 
-$username = $_POST['username'];
+$username = $_GET['username'];
 
 $user_row = $db->prepare("SELECT user_id FROM users WHERE username='$username' LIMIT 1");
 $user_row->execute();
