@@ -55,10 +55,10 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
           "canFrame": ' . $device_canFrame . '
         },';
     }
-    trim ($locationStr, ",");
+    trim($locationStr, ",");
     $locationStr = $locationStr . '] },';
   }
-  trim ($locationStr, ",");
+  trim($locationStr, ",");
   $locationStr = $locationStr . '] },';
 }
 trim ($locationStr, ",");
@@ -66,4 +66,4 @@ $locationStr = $locationStr . " ]";
   
 echo $locationStr;
   
-  ?>
+?>
