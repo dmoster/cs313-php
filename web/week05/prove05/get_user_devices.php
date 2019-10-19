@@ -53,7 +53,7 @@ while ($location = $location_row->fetch(PDO::FETCH_ASSOC)) {
           "notes": "' . $device_notes . '",
           "type": "' . $device_type . '",
           "canFrame": ' . $device_canFrame . '
-        }';
+        },';
       }
   
     $locationStr = $locationStr . '] },';
