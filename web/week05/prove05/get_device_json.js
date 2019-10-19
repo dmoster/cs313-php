@@ -10,6 +10,6 @@ function getDeviceJSON(username) {
     }
   };
 
-  xmlhttp.open("POST", "get_user_devices.php", true);
-  xmlhttp.send("username=" + username);
+  xmlhttp.open("GET", "get_user_devices.php?username=" + username, true);
+  xmlhttp.send();
 }
