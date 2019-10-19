@@ -49,7 +49,8 @@ var deviceDisplay = document.getElementById('device-list');
 var username = document.getElementById('username').innerHTML;
 
 if (!deviceDisplay.innerHTML) {
-  getDeviceJSON(username);
+  locations = new Array();
+  locations = getDeviceJSON(username);
   console.log(locations.length);
   displayDeviceGrid();
 }
