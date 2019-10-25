@@ -61,7 +61,7 @@ $lastname = $user['lastname'];
     <main>
   
       <div id="intro">
-        <h1><span id="username" style="display: none;"><?=$username?></span><?=$firstname;?>'s Device Management</h1>
+        <h1><?=$firstname;?>'s Device Management</h1>
         <p class="lead">Below are all items listed in <?=$firstname;?> <?=$lastname;?>'s database.</p>
       </div>
   
@@ -71,6 +71,13 @@ $lastname = $user['lastname'];
   
   
     <footer>
+
+      <form action="<?php session_unset(); session_destroy(); 
+       ?>">
+
+        <button class="btn" type="submit">Sign out <span id="username"><?=$username?></button>
+
+      </form>
   
       <a href="https://github.com/dmoster" target="_blank">github.com/dmoster</a>
       <p class="copyright">&copy; 2019 Mostermind</p>
