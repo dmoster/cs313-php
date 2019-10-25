@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       die();
     }
     else {
-      $pwErr = "Please enter the correct password.";
+      $pwErr = "Please enter the correct password. Password is not $password. it is $dbPassword.";
     }
   }
 }
