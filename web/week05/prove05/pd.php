@@ -49,8 +49,8 @@ $lastname = $user['lastname'];
     
         <div id="layout_toggle">
           <a href="#intro" class="inline-btn"><i class="fas fa-arrow-up"></i></a>
-          <button class="aside_btn" onclick="displayDeviceGrid()"><i class="fas fa-border-all"></i></button>
-          <button class="aside_btn radius-r" onclick="displayDeviceTable()"><i class="fas fa-list"></i></button>
+          <button class="aside_btn" onclick="displayDeviceGrid(locations)"><i class="fas fa-border-all"></i></button>
+          <button class="aside_btn radius-r" onclick="displayDeviceTable(locations)"><i class="fas fa-list"></i></button>
         </div>
 
     </aside>
