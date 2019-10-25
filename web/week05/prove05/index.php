@@ -72,7 +72,7 @@ function test_input($data) {
       <h1>Get Started</h1>
       <p class="lead">Log in below to begin.</p>
   
-      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <input type="text" name="username" placeholder="Username" value="<?=$username;?>">
         <span class="error"><?=$unErr;?></span>
         <input type="password" name="password" placeholder="Password">

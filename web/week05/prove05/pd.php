@@ -15,6 +15,37 @@ $user = $user_row->fetch(PDO::FETCH_ASSOC);
 $firstname = $user['firstname'];
 $lastname = $user['lastname'];
 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["device_name"])) {
+    $devNameErr = "Please enter a device name.";
+  }
+  else {
+    $device_name = test_input($_POST["device_name"]);
+  }
+
+  if (!empty($_POST["device_description"])) {
+    $device_description = test_input($_POST["device_description"]);
+  }
+
+  if (empty($_POST["device_address"])) {
+    $devAddrErr = "Please enter a URL for the device.";
+  }
+  else {
+    $device_address = test_input($_POST["device_address"]);
+
+  }
+}
+
+
+function test_input($data) {
+$data = trim($data);
+$data = stripslashes($data);
+$data = htmlspecialchars($data);
+
+return $data;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,18 +78,22 @@ $lastname = $user['lastname'];
 
       <nav id="main-nav" class="radius-r"></nav>
     
-      <form id="add-device" class="radius-r" action="add_device.php" method="POST">
-        <span class="lead">Add a device</span>
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="description" placeholder="Description">
-        <input type="url" name="address" placeholder="https://example.com">
-        <button class="btn" type="submit">Add</button>
-      </form>
-
-      <div id="layout_toggle">
-        <a href="#intro" class="inline-btn"><i class="fas fa-arrow-up"></i></a>
-        <button class="aside_btn" onclick="displayDeviceGrid(locations)"><i class="fas fa-border-all"></i></button>
-        <button class="aside_btn radius-r" onclick="displayDeviceTable(locations)"><i class="fas fa-list"></i></button>
+      <div>
+        <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+          <span class="lead">Add a device</span>
+          <input type="text" name="device_name" placeholder="Name" value="<?=$device_name;?>">
+          <span class="error"><?=$devNameErr;?></span>
+          <input type="text" name="device_description" placeholder="Description" value="<?=$device_description;?>">
+          <input type="url" name="device_address" placeholder="https://example.com" value="<?=$device_address;?>">
+          <span class="error"><?=$devAddrErr;?></span>
+          <button class="btn" type="submit">Add</button>
+        </form>
+  
+        <div id="layout_toggle">
+          <a href="#intro" class="inline-btn"><i class="fas fa-arrow-up"></i></a>
+          <button class="aside_btn" onclick="displayDeviceGrid(locations)"><i class="fas fa-border-all"></i></button>
+          <button class="aside_btn radius-br" onclick="displayDeviceTable(locations)"><i class="fas fa-list"></i></button>
+        </div>
       </div>
 
     </aside>

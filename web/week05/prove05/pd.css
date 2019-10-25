@@ -286,6 +286,7 @@ footer {
   flex-direction: column;
   background-color: #ddd;
   padding: 10px;
+  
 }
 
 #add-device input, #add-device button {
