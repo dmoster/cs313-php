@@ -15,6 +15,15 @@ $user = $user_row->fetch(PDO::FETCH_ASSOC);
 $firstname = $user['firstname'];
 $lastname = $user['lastname'];
 
+
+function logout() {
+  session_unset();
+  session_destroy();
+
+  header('Location: index.php');
+  die();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +81,7 @@ $lastname = $user['lastname'];
   
     <footer>
 
-      <form action="<?php session_unset(); session_destroy(); 
-       ?>">
+      <form action="<?php logout(); ?>">
 
         <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
 
