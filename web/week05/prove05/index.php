@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if (empty($_POST["password"])) {
-    $pwErr = "Please enter the correct password.";
+    $pwErr = "Please enter a password.";
   }
   else {
     $password = test_input($_POST["password"]);
@@ -38,6 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       header('Location: pd.php');
       die();
+    }
+    else {
+      $pwErr = "Please enter the correct password.";
     }
   }
 }
