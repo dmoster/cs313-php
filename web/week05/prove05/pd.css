@@ -188,12 +188,12 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-#get-started {
+#get-started, #device-adder {
   min-height: 100vh;
   display: flex;
 }
 
-#get-started .card {
+#get-started .card, #device-adder .card {
   width: 300px;
 }
 
@@ -219,6 +219,7 @@ tr:nth-child(even) {
 
 .error {
   color: tomato;
+  padding: 10px;
 }
 
 .radius-tr {
@@ -280,11 +281,6 @@ footer {
   font-size: 0.8em;
 }
 
-#list-actions {
-  display: flex;
-  flex-direction: column;
-}
-
 #add-device {
   display: flex;
   flex-direction: column;
@@ -292,7 +288,7 @@ footer {
   padding: 10px;
 }
 
-#add-device input, #add-device button {
+#add-device input,#add-device select, #add-device button {
   font-size: 1em;
   border: none;
   border-radius: 3px;
