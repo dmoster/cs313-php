@@ -10,7 +10,7 @@ $user = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["username"])) {
-    $unErr = "Please enter a valid username.";
+    $unErr = "Please enter a username.";
   }
   else {
     $username = test_input($_POST["username"]);
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $dbPassword = $user['password'];
     }
     catch (Exception $e) {
-      $unErr = "Please enter a valid username.";
+      $unErr = "Please enter a valid username. ";
     }
   }
 
