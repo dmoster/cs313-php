@@ -16,7 +16,7 @@ $firstname = $user['firstname'];
 $lastname = $user['lastname'];
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (empty($_POST["device_name"])) {
     $devNameErr = "Please enter a device name.";
   }
@@ -79,7 +79,7 @@ return $data;
       <nav id="main-nav" class="radius-r"></nav>
     
       <div id="list-actions">
-        <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+        <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="GET">
           <span class="lead">Add a device</span>
           <input type="text" name="device_name" placeholder="Name" value="<?=$device_name;?>">
           <span class="error"><?=$devNameErr;?></span>
