@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $unErr = "Please enter a username.";
   }
   else {
-    $username = test_input($_POST["username"]);
+    $username = $_POST["username"];
 
     try {
       $user_row = $db->prepare("SELECT password FROM users WHERE username='$username' LIMIT 1");
