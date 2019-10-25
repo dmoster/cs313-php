@@ -13,6 +13,7 @@ function getDeviceJSON(username) {
   };
 
   xmlhttp.open("POST", "get_user_devices.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form/urlencoded");
   xmlhttp.send("username=" + username);
 
   return null;
