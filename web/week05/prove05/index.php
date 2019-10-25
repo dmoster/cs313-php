@@ -51,10 +51,6 @@ function test_input($data) {
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
 
-  if ($data == $_POST["password"]) {
-
-  }
-
   return $data;
 }
 
