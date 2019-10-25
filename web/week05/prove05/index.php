@@ -13,10 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $unErr = "Please enter a username.";
   }
   else {
-    $username = $_POST["username"];
+    $username = test_input($_POST["username"]);
 
     try {
-      $user_row = $db->prepare("SELECT password FROM users WHERE username='$username' LIMIT 1");
+      $user_row = $db->prepare("SELECT user_password FROM users WHERE username='$username' LIMIT 1");
       $user_row->execute();
 
       $unErr = "USERNAME EXISTS!!!!";
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $dbPassword = $user['password'];
     }
     catch (Exception $e) {
-      $unErr = "Please enter a valid username. Username '$username' does not exist.";
+      $unErr = "Please enter a valid username.";
     }
   }
 
