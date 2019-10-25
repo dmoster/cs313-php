@@ -18,8 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       $user_row = $db->prepare("SELECT user_password FROM users WHERE username='$username' LIMIT 1");
       $user_row->execute();
-
-      $unErr = "USERNAME EXISTS!!!!";
   
       $user = $user_row->fetch(PDO::FETCH_ASSOC);
       $dbPassword = $user['password'];
@@ -36,7 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = test_input($_POST["password"]);
 
     if ($password == $dbPassword) {
+      $_SESSION['username'] = $username;
 
+      header('Location: pd.php');
+      die();
     }
   }
 }
