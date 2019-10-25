@@ -47,11 +47,19 @@ $lastname = $user['lastname'];
 
       <nav id="main-nav" class="radius-r"></nav>
     
-        <div id="layout_toggle">
-          <a href="#intro" class="inline-btn"><i class="fas fa-arrow-up"></i></a>
-          <button class="aside_btn" onclick="displayDeviceGrid(locations)"><i class="fas fa-border-all"></i></button>
-          <button class="aside_btn radius-r" onclick="displayDeviceTable(locations)"><i class="fas fa-list"></i></button>
-        </div>
+      <form id="add-device" action="add_device.php" method="POST">
+        <span class="lead">Add a device</span>
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="description" placeholder="description">
+        <input type="url" name="address" placeholder="https://example.com">
+        <button type="submit">Add</button>
+      </form>
+
+      <div id="layout_toggle">
+        <a href="#intro" class="inline-btn"><i class="fas fa-arrow-up"></i></a>
+        <button class="aside_btn" onclick="displayDeviceGrid(locations)"><i class="fas fa-border-all"></i></button>
+        <button class="aside_btn radius-r" onclick="displayDeviceTable(locations)"><i class="fas fa-list"></i></button>
+      </div>
 
     </aside>
   </div>
