@@ -47,7 +47,7 @@ $lastname = $user['lastname'];
 
       <nav id="main-nav" class="radius-r"></nav>
     
-      <form id="add-device" action="add_device.php" method="POST">
+      <form id="add-device" class="radius-r" action="add_device.php" method="POST">
         <span class="lead">Add a device</span>
         <input type="text" name="name" placeholder="Name">
         <input type="text" name="description" placeholder="Description">
