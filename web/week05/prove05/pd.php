@@ -78,7 +78,7 @@ return $data;
 
       <nav id="main-nav" class="radius-r"></nav>
     
-      <div>
+      <div id="list-actions">
         <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
           <span class="lead">Add a device</span>
           <input type="text" name="device_name" placeholder="Name" value="<?=$device_name;?>">

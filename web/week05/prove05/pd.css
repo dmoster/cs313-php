@@ -281,12 +281,16 @@ footer {
   font-size: 0.8em;
 }
 
+#list-actions {
+  display: flex;
+  flex-direction: column;
+}
+
 #add-device {
   display: flex;
   flex-direction: column;
   background-color: #ddd;
   padding: 10px;
-  
 }
 
 #add-device input, #add-device button {
