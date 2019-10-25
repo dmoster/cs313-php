@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $dbPassword = $user['password'];
     }
     catch (Exception $e) {
-      $unErr = "Please enter a valid db username. ";
+      $unErr = "Please enter a valid username. Username '$username' does not exist.";
     }
   }
 
