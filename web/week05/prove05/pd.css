@@ -308,7 +308,7 @@ footer {
 }
 
 #intro .btn:hover {
-  color: transparent;
+  color: inherit;
   background-color: mediumseagreen;
 }
 
