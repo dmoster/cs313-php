@@ -7,12 +7,13 @@ function getDeviceJSON(username) {
       var locations = JSON.parse(this.responseText);
 
       displayDeviceGrid(locations);
+      console.log(locations);
       return locations;
     }
   };
 
-  xmlhttp.open("GET", "get_user_devices.php?username=" + username, true);
-  xmlhttp.send();
+  xmlhttp.open("POST", "get_user_devices.php", true);
+  xmlhttp.send("username=" + username);
 
   return null;
 }
