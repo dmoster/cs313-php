@@ -75,7 +75,7 @@ $lastname = $user['lastname'];
       <form action="<?php session_unset(); session_destroy(); 
        ?>">
 
-        <button class="btn" type="submit">Sign out <span id="username"><?=$username?></button>
+        <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
 
       </form>
   

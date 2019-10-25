@@ -58,7 +58,7 @@ aside nav li a, .inline-btn, #search, .aside_btn {
   font-size: 1em;
 }
 
-nav, #search, #layout_toggle, .card {
+nav, #search, #layout_toggle, .card, #logout {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -280,11 +280,15 @@ footer {
   font-size: 0.8em;
 }
 
-input {
+#add-device input {
   font-size: 1em;
   border: none;
   border-radius: 3px;
   padding: 10px;
+}
+
+#logout {
+  border: none;
 }
 
 @media only screen and (max-width: 1172px) {
