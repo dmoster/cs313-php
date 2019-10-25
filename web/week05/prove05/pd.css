@@ -288,7 +288,7 @@ footer {
   padding: 10px;
 }
 
-#add-device input {
+#add-device input, #add-device button {
   font-size: 1em;
   border: none;
   border-radius: 3px;
