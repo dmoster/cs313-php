@@ -5,7 +5,8 @@ session_start();
 require "db_connect.php";
 $db = getDatabase();
 
-$username = $password = "";
+$username = $password = $dbPassword = "";
+$user = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["username"])) {
@@ -13,6 +14,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   else {
     $username = test_input($_POST["username"]);
+
+    try {
+      $user_row = $db->prepare("SELECT password FROM users WHERE username='$username' LIMIT 1");
+      $user_row->execute();
+
+      $unErr = "USERNAME EXISTS!!!!";
+  
+      $user = $user_row->fetch(PDO::FETCH_ASSOC);
+      $dbPassword = $user['password'];
+    }
+    catch (Exception $e) {
+      $unErr = "Please enter a valid username.";
+    }
   }
 
   if (empty($_POST["password"])) {
@@ -20,6 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   else {
     $password = test_input($_POST["password"]);
+
+    if ($password == $dbPassword) {
+
+    }
   }
 }
 
