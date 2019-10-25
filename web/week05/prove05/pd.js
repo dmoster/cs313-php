@@ -12,7 +12,7 @@ function copyText(refButton) {
 
 
 // Declare global variables
-var devices = locations = null;
+var devices = null;
 var locationIt = floorIt = deviceIt = 0;
 var navString = devicesString = '';
 
@@ -48,5 +48,5 @@ var deviceDisplay = document.getElementById('device-list');
 var username = document.getElementById('username').innerHTML;
 
 if (!deviceDisplay.innerHTML) {
-  locations = getDeviceJSON(username);
+  getDeviceJSON(username);
 }
