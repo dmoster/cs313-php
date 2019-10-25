@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $floorErr = "Please enter a URL for the device.";
   }
   else {
-    $device_address = test_input($_POST["floor"]);
+    $floor = test_input($_POST["floor"]);
 
   }
 
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $locationErr = "Please enter a URL for the device.";
   }
   else {
-    $device_address = test_input($_POST["location"]);
+    $floor = test_input($_POST["location"]);
 
   }
 
