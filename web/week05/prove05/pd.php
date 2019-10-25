@@ -45,7 +45,7 @@ $lastname = $user['lastname'];
         <button id="search_reset" class="inline-btn radius-r" type="reset" onclick="clearSearch()">Clear</button>
       </form>
 
-      <nav id="main-nav"></nav>
+      <nav id="main-nav" class="radius-r"></nav>
     
         <div id="layout_toggle">
           <a href="#intro" class="inline-btn"><i class="fas fa-arrow-up"></i></a>
