@@ -27,6 +27,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $device_address = test_input($_POST["device_address"]);
 
   }
+
+  if (empty($_POST["floor"])) {
+    $floorErr = "Please enter a URL for the device.";
+  }
+  else {
+    $device_address = test_input($_POST["floor"]);
+
+  }
+
+  if (empty($_POST["location"])) {
+    $locationErr = "Please enter a URL for the device.";
+  }
+  else {
+    $device_address = test_input($_POST["location"]);
+
+  }
+
+  if (!empty($_POST["device_name"]) && !empty($_POST["device_address"]) && !empty($_POST["floor"]) && !empty($_POST["location"]))
 }
 
 
