@@ -7,9 +7,12 @@ function getDeviceJSON(username) {
       var locations = JSON.parse(this.responseText);
 
       displayDeviceGrid(locations);
+      return locations;
     }
   };
 
   xmlhttp.open("GET", "get_user_devices.php?username=" + username, true);
   xmlhttp.send();
+
+  return null;
 }
