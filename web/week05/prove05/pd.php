@@ -63,6 +63,8 @@ $lastname = $user['lastname'];
       <div id="intro">
         <h1><?=$firstname;?>'s Device Management</h1>
         <p class="lead">Below are all items listed in <?=$firstname;?> <?=$lastname;?>'s database.</p>
+
+        <a href="add_devices.php" class="btn">Add a Device</a>
       </div>
   
       <div id="device-list"></div>
