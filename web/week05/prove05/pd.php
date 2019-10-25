@@ -50,9 +50,9 @@ $lastname = $user['lastname'];
       <form id="add-device" action="add_device.php" method="POST">
         <span class="lead">Add a device</span>
         <input type="text" name="name" placeholder="Name">
-        <input type="text" name="description" placeholder="description">
+        <input type="text" name="description" placeholder="Description">
         <input type="url" name="address" placeholder="https://example.com">
-        <button type="submit">Add</button>
+        <button class="btn" type="submit">Add</button>
       </form>
 
       <div id="layout_toggle">

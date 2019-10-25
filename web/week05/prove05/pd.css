@@ -280,11 +280,17 @@ footer {
   font-size: 0.8em;
 }
 
+#add-device {
+  display: flex;
+  flex-direction: column;
+}
+
 #add-device input {
   font-size: 1em;
   border: none;
   border-radius: 3px;
   padding: 10px;
+  margin: 2px;
 }
 
 #logout {
