@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $user_row->execute();
   
       $user = $user_row->fetch(PDO::FETCH_ASSOC);
-      $dbPassword = $user['password'];
+      $dbPassword = $user['user_password'];
     }
     catch (Exception $e) {
       $unErr = "Please enter a valid username.";
