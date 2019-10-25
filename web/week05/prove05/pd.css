@@ -302,6 +302,10 @@ footer {
   cursor: pointer;
 }
 
+#intro .btn {
+  color: mediumseagreen;
+}
+
 @media only screen and (max-width: 1172px) {
   body {
     grid-template-columns: 25% auto;
