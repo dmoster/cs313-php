@@ -304,6 +304,12 @@ footer {
 
 #intro .btn {
   color: mediumseagreen;
+  border: 1px solid mediumseagreen;
+}
+
+#intro .btn:hover {
+  color: transparent;
+  background-color: mediumseagreen;
 }
 
 @media only screen and (max-width: 1172px) {
