@@ -5,7 +5,7 @@ session_start();
 require "db_connect.php";
 $db = getDatabase();
 
-$user_id;
+$user_id = 5;
 
 $username = $_POST['username'];
 $_SESSION['username'] = $username;
