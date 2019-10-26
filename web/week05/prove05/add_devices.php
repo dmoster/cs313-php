@@ -159,7 +159,7 @@ $username = 'dmoster';
             $floor_id = $row['floor_id'];
             $floor_name = $row['floor_name'];
 
-            echo "<div class=\"input-group\"><input type=\"radio\" name=\"location\" id=\"floor$floor_id\" value=\"$floor_id\">
+            echo "<div class=\"input-group\"><input type=\"radio\" name=\"floor\" id=\"floor$floor_id\" value=\"$floor_id\">
                   <label for=\"floor$floor_id\">$floor_name</label></div>";
           }
         }
