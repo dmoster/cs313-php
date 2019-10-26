@@ -8,6 +8,14 @@ $db = getDatabase();
 $username = $_POST['username'];
 $_SESSION['username'] = $username;
 
+$user_row = $db->prepare("SELECT user_id FROM users WHERE username='$username' LIMIT 1");
+$user_row->execute();
+
+$user = $user_row->fetch(PDO::FETCH_ASSOC);
+
+$user_id = $user['user_id'];
+$_SESSION['user_id'] = $user_id;
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["device_name"])) {
@@ -113,7 +121,7 @@ $username = 'dmoster';
         <?php
 
         try {
-          $stmt = $db->prepare("SELECT location_id, location_name FROM locations");
+          $stmt = $db->prepare("SELECT location_id, location_name FROM locations WHERE user_id='$user_id'");
           $stmt->execute();
 
           while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
