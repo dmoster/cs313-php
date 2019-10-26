@@ -15,9 +15,9 @@ try {
   $user_row = $db->prepare("SELECT * FROM users WHERE username='$username' LIMIT 1");
   $user_row->execute();
 
-  $user = $user_row->fetchAll(PDO::FETCH_ASSOC);
+  $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
-  $user_id = $user[0]['firstname'];
+  $user_id = $user['firstname'];
   $_SESSION['user_id'] = $user_id;
 }
 catch (PDOException $e) {
