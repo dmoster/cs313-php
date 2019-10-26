@@ -65,7 +65,7 @@ $lastname = $user['lastname'];
         <p class="lead">Below are all items listed in <?=$firstname;?> <?=$lastname;?>'s database.</p>
 
         <form action="add_devices.php" method="POST">
-          <button class="btn" name="add_to" value="<?=$username;?>">Add a Device</button>
+          <button class="btn" name="add_to" value="<?=$username;?>">Add a Device to <?=$username;?></button>
         </form>
       </div>
   
