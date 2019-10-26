@@ -2,8 +2,8 @@
 
 session_start();
 
-//require "db_connect.php";
-//$db = getDatabase();
+require "db_connect.php";
+$db = getDatabase();
 
 $username = $_SESSION['username'];
 
@@ -45,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if (!empty($_POST["device_name"]) && !empty($_POST["device_address"]) && !empty($_POST["floor"]) && !empty($_POST["location"])) {
+
+  }
 }
 
 
@@ -80,22 +82,51 @@ return $data;
       <h1>Add a Device</h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <input type="text" name="device_name" placeholder="Name" value="<?=$device_name;?>">
+
+        <label for="device_name">Name</label>
+        <input id="device_name" type="text" name="device_name" placeholder="Mac Mini" value="<?=$device_name;?>">
         <span class="error"><?=$devNameErr;?></span>
 
-        <input type="text" name="device_description" placeholder="Description" value="<?=$device_description;?>">
+        <label for="device_description">Description</label>
+        <input id="device_description" type="text" name="device_description" placeholder="Dev box and productivity machine" value="<?=$device_description;?>">
 
-        <input type="url" name="device_address" placeholder="https://example.com" value="<?=$device_address;?>">
+        <label for="device_address">URL/IP Address</label>
+        <input id="device_address" type="text" name="device_address" placeholder="10.20.5.41" value="<?=$device_address;?>">
         <span class="error"><?=$devAddrErr;?></span>
 
-        <select name="device_type">
+        <label for="device_type">Type</label>
+        <select id="device_type" name="device_type">
           <option value="Computer">Computer</option>
           <option value="Printer">Printer</option>
           <option value="Server">Server</option>
+          <option value="Router">Router</option>
+          <option value="Switch">Switch</option>
           <option value="Phone">Phone</option>
           <option value="Appliance">Appliance</option>
           <option value="Other">Other</option>
         </select>
+
+        <label for="location">Location</label>
+        <?php
+
+        try {
+          $stmt = $db->prepare("SELECT location_id, location_name FROM locations WHERE user_id='$username'");
+          $stmt->execute();
+
+          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $location_id = $row['location_id'];
+            $location_name = $row['location_name'];
+
+            echo "<div class=\"input-group\"><input type=\"radio\" name=\"location\" id=\"loc$location_id\" value=\"$location_id\">
+                  <label for=\"loc$location_id\">$location_name</label>";
+          }
+        }
+        catch (PDOException $e) {
+          echo "Something went wrong. $e";
+          die();
+        }
+
+        ?>
 
         <button class="btn" type="submit">Add</button>
       </form>
