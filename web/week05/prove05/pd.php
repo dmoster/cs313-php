@@ -5,7 +5,7 @@ session_start();
 require "db_connect.php";
 $db = getDatabase();
 
-if (!empty($_POST['add_username'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $_POST['add_username'];
 }
 

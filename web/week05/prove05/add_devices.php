@@ -26,7 +26,7 @@ catch (PDOException $e) {
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $device_type = $_POST['device_type'];
   $location = $_POST['location'];
   $floor = $_POST['floor'];
