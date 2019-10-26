@@ -58,7 +58,7 @@ aside nav li a, .inline-btn, #search, .aside_btn {
   font-size: 1em;
 }
 
-nav, #search, #layout_toggle, .card, #logout {
+nav, #search, #layout_toggle, .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -298,10 +298,17 @@ footer {
 }
 
 #logout {
-  border: none;
+  border: 1px solid orange;
+  color: orange;
+  background-color: transparent;
   margin: 20px;
   padding: 5px;
   cursor: pointer;
+}
+
+#logout:hover {
+  color: inherit;
+  background-color: orange;
 }
 
 #intro .btn {
