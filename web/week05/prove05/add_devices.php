@@ -103,6 +103,10 @@ $username = 'dmoster';
 <body id="device-adder">
 
   <main>
+    <div id="intro">
+      <a href="pd.php" class="btn"><i class="fas fa-chevron-left"></i> Back</a>
+    </div>
+
     <div class="card">
       <h1>Add a Device</h1>
 
@@ -124,9 +128,11 @@ $username = 'dmoster';
           <option value="Computer">Computer</option>
           <option value="Printer">Printer</option>
           <option value="Server">Server</option>
+          <option value="Print Server">Print Server</option>
           <option value="Router">Router</option>
           <option value="Switch">Switch</option>
-          <option value="Phone">Phone</option>
+          <option value="Smartphone">Smartphone</option>
+          <option value="Tablet">Tablet</option>
           <option value="Appliance">Appliance</option>
           <option value="Other">Other</option>
         </select>
@@ -179,6 +185,20 @@ $username = 'dmoster';
       </form>
     </div>
   </main>
+
+  <footer>
+
+    <form action="<?php session_unset();
+                        session_destroy(); ?>">
+
+      <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
+
+    </form>
+
+    <a href="https://github.com/dmoster" target="_blank">github.com/dmoster</a>
+    <p class="copyright">&copy; 2019 Mostermind</p>
+
+  </footer>
 
 </body>
 </html>
