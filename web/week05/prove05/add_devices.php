@@ -6,6 +6,7 @@ require "db_connect.php";
 $db = getDatabase();
 
 $user_id;
+$user;
 
 $username = $_POST['username'];
 $_SESSION['username'] = $username;
@@ -98,7 +99,7 @@ $username = 'dmoster';
 
   <main>
     <div class="card">
-      <h1>Add a Device<?=$user_id;?><?=$username;?></h1>
+      <h1>Add a Device<?=$user_id;?><?=$username;?><?=$user?></h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
