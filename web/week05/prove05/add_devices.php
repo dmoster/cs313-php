@@ -8,8 +8,13 @@ $db = getDatabase();
 $username = $_POST['username'];
 $_SESSION['username'] = $username;
 
-$user_row = $db->prepare("SELECT user_id FROM users WHERE username='$username' LIMIT 1");
-$user_row->execute();
+try {
+  $user_row = $db->prepare("SELECT user_id FROM users WHERE username='$username' LIMIT 1");
+  $user_row->execute();
+}
+catch (PDOException $e) {
+  echo $e;
+}
 
 $user = $user_row->fetch(PDO::FETCH_ASSOC);
 

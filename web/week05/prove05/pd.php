@@ -32,7 +32,7 @@ $lastname = $user['lastname'];
   <script src="device_grid.js"></script>
   <script src="device_table.js"></script>
 
-  <title><?=$firstname;?> <?=$lastname;?>'s Device Management</title>
+  <title>View Devices</title>
 
 </head>
 <body>
