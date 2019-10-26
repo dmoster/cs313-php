@@ -104,7 +104,9 @@ $username = 'dmoster';
 
   <main>
     <div id="intro">
-      <a href="pd.php" class="btn"><i class="fas fa-chevron-left"></i> Back</a>
+      <form action="pd.php" method="POST">
+        <button class="btn" name="add_username" value="<?=$username;?>"><i class="fas fa-long-arrow-alt-left"></i> Back</button>
+      </form>
     </div>
 
     <div class="card">
