@@ -303,6 +303,7 @@ footer {
 #intro .btn {
   color: mediumseagreen;
   border: 1px solid mediumseagreen;
+  background-color: transparent;
 }
 
 #intro .btn:hover {

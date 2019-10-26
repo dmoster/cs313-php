@@ -85,7 +85,7 @@ return $data;
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
         <label for="device_name">Name</label>
-        <input id="device_name" type="text" name="device_name" placeholder="Mac Mini" value="<?=$device_name;?>">
+        <input id="device_name" type="text" name="device_name" placeholder="Mac Mini" value="<?=$username;?>">
         <span class="error"><?=$devNameErr;?></span>
 
         <label for="device_description">Description</label>
