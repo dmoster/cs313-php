@@ -74,11 +74,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['location'])) {
 
 
 function test_input($data) {
-$data = trim($data);
-$data = stripslashes($data);
-$data = htmlspecialchars($data);
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
 
-return $data;
+  return $data;
+}
+
+function viewDevices() {
+  $_SESSION['username'] = $username;
+
+  header('Location: pd.php');
+  die();
 }
 
 ?>
@@ -102,7 +109,7 @@ return $data;
 
   <main>
     <div id="intro">
-      <form action="pd.php" method="POST">
+      <form action="<?php viewDevices(); ?>">
         <button class="btn" name="add_username" value="<?=$username;?>"><i class="fas fa-long-arrow-alt-left"></i> Back</button>
       </form>
     </div>
