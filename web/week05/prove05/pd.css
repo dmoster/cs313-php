@@ -315,6 +315,7 @@ footer {
   color: mediumseagreen;
   border: 1px solid mediumseagreen;
   background-color: transparent;
+  font-size: 1em;
 }
 
 #intro .btn:hover {

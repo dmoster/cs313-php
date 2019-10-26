@@ -16,7 +16,7 @@ try {
 
   $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
-  $user_id = 5;//(int)$user['user_id'];
+  $user_id = (int)$user['user_id'];
   $_SESSION['user_id'] = $user_id;
 }
 catch (PDOException $e) {
@@ -98,7 +98,7 @@ $username = 'dmoster';
 
   <main>
     <div class="card">
-      <h1>Add a Device<?=$user_id;?></h1>
+      <h1>Add a Device<?=$user_id;?><?=$username;?></h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
