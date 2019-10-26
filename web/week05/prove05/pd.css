@@ -297,8 +297,17 @@ footer {
   margin-top: 20px;
 }
 
+#add-device .input-group {
+  padding: 10px;
+}
+
 #add-device button {
   background-color: #ddd;
+  margin-top: 20px;
+}
+
+#add-device button:hover {
+  background-color: grey;
 }
 
 #logout {
