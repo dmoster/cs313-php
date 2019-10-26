@@ -83,7 +83,7 @@ $username = 'dmoster';
   <link rel="stylesheet" href="pd.css"/>
   <script src="https://kit.fontawesome.com/599e60a037.js" crossorigin="anonymous"></script>
 
-  <title>Add Devices</title>
+  <title>Add Dev<?=$user_id;?>ices</title>
 
 </head>
 <body id="device-adder">
@@ -95,7 +95,7 @@ $username = 'dmoster';
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
         <label for="device_name">Name</label>
-        <input id="device_name" type="text" name="device_name" placeholder="Mac Mini" value="<?=$username;?>">
+        <input id="device_name" type="text" name="device_name" placeholder="Mac Mini" value="<?=$device_name;?>">
         <span class="error"><?=$devNameErr;?></span>
 
         <label for="device_description">Description</label>
