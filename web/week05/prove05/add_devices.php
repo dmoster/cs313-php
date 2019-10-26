@@ -170,7 +170,7 @@ $username = 'dmoster';
 
         ?>
 
-        <button class="btn" type="submit" name="add_to" value="$username">Add</button>
+        <button class="btn" type="submit" name="add_to" value="<?=$username;?>">Add</button>
       </form>
     </div>
   </main>
