@@ -26,7 +26,7 @@ catch (PDOException $e) {
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['location'])) {
   $device_type = $_POST['device_type'];
   $location = $_POST['location'];
   $floor = $_POST['floor'];
@@ -80,8 +80,6 @@ $data = htmlspecialchars($data);
 
 return $data;
 }
-
-$username = 'dmoster';
 
 ?>
 

@@ -5,10 +5,6 @@ session_start();
 require "db_connect.php";
 $db = getDatabase();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $username = $_POST['add_username'];
-}
-
 $username = $_SESSION['username'];
 
 $user_row = $db->prepare("SELECT firstname, lastname, user_id FROM users WHERE username='$username' LIMIT 1");
