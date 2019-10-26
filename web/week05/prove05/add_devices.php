@@ -5,7 +5,7 @@ session_start();
 require "db_connect.php";
 $db = getDatabase();
 
-$user_id = 5;
+$user_id;
 
 $username = $_POST['username'];
 $_SESSION['username'] = $username;
@@ -16,7 +16,7 @@ try {
 
   $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
-  $user_id = (int)$user['user_id'];
+  $user_id = 5;//(int)$user['user_id'];
   $_SESSION['user_id'] = $user_id;
 }
 catch (PDOException $e) {
@@ -91,14 +91,14 @@ $username = 'dmoster';
   <link rel="stylesheet" href="pd.css"/>
   <script src="https://kit.fontawesome.com/599e60a037.js" crossorigin="anonymous"></script>
 
-  <title>Add Dev<?=$user_id;?>ices</title>
+  <title>Add Devices</title>
 
 </head>
 <body id="device-adder">
 
   <main>
     <div class="card">
-      <h1>Add a Device</h1>
+      <h1>Add a Device<?=$user_id;?></h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 

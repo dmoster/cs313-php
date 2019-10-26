@@ -298,8 +298,8 @@ footer {
 }
 
 #logout {
-  border: 1px solid orange;
-  color: orange;
+  border: 1px solid tomato;
+  color: tomato;
   background-color: transparent;
   margin: 20px;
   padding: 5px;
@@ -308,7 +308,7 @@ footer {
 
 #logout:hover {
   color: inherit;
-  background-color: orange;
+  background-color: tomato;
 }
 
 #intro .btn {
