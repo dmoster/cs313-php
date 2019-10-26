@@ -129,7 +129,7 @@ $username = 'dmoster';
         <?php
 
         try {
-          $stmt = $db->prepare("SELECT location_id, location_name FROM locations WHERE user_id=$user_id");
+          $stmt = $db->prepare("SELECT location_id, location_name FROM locations WHERE user_id=2");
           $stmt->execute();
 
           while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
