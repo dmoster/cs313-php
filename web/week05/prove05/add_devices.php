@@ -8,6 +8,7 @@ $db = getDatabase();
 $username = $_POST['username'];
 $_SESSION['username'] = $username;
 
+echo $username;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["device_name"])) {
@@ -49,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   }
 }
+echo $username;
 
 
 function test_input($data) {
@@ -58,6 +60,7 @@ $data = htmlspecialchars($data);
 
 return $data;
 }
+echo $username;
 
 ?>
 
