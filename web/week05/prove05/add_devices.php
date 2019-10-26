@@ -99,7 +99,7 @@ $username = 'dmoster';
 
   <main>
     <div class="card">
-      <h1>Add a Device</h1>
+      <h1>Add a Device<?=$user_id;?></h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
