@@ -7,13 +7,14 @@ $db = getDatabase();
 
 $username = $_SESSION['username'];
 
-$user_row = $db->prepare("SELECT firstname, lastname FROM users WHERE username='$username' LIMIT 1");
+$user_row = $db->prepare("SELECT firstname, lastname, user_id FROM users WHERE username='$username' LIMIT 1");
 $user_row->execute();
 
 $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
 $firstname = $user['firstname'];
 $lastname = $user['lastname'];
+$user_id = $user['user_id'];
 
 ?>
 
@@ -61,7 +62,7 @@ $lastname = $user['lastname'];
     <main>
   
       <div id="intro">
-        <h1><?=$firstname;?>'s Device Management</h1>
+        <h1><?=$firstname;?>'s Device Mana<?=$user_id;?>gement</h1>
         <p class="lead">Below are all items listed in <?=$firstname;?> <?=$lastname;?>'s database.</p>
 
         <form action="add_devices.php" method="POST">
