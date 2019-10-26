@@ -81,13 +81,6 @@ function test_input($data) {
   return $data;
 }
 
-function viewDevices() {
-  $_SESSION['username'] = $username;
-
-  header('Location: pd.php');
-  die();
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -109,8 +102,8 @@ function viewDevices() {
 
   <main>
     <div id="intro">
-      <form action="<?php viewDevices(); ?>">
-        <button class="btn" name="add_username" value="<?=$username;?>"><i class="fas fa-long-arrow-alt-left"></i> Back</button>
+      <form action="pd.php" method="POST">
+        <button class="btn" type="submit" name="add_username" value="<?=$username;?>"><i class="fas fa-long-arrow-alt-left"></i> Back</button>
       </form>
     </div>
 
