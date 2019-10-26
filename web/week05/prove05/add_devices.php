@@ -12,7 +12,7 @@ $username = $_POST['username'];
 $_SESSION['username'] = $username;
 
 try {
-  $user_row = $db->prepare("SELECT * FROM users LIMIT 1");
+  $user_row = $db->prepare("SELECT * FROM users WHERE username='$username' LIMIT 1");
   $user_row->execute();
 
   $user = $user_row->fetch(PDO::FETCH_ASSOC);
@@ -99,7 +99,7 @@ $username = 'dmoster';
 
   <main>
     <div class="card">
-      <h1>Add a Device<?=$user_id;?></h1>
+      <h1>Add a Dev<?=$username;?>ice</h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
