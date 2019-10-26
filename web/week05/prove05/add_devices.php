@@ -188,13 +188,8 @@ function test_input($data) {
 
   <footer>
 
-    <form action="<?php session_unset();
-                        session_destroy();
-                        header('Location: index.php');
-                        die(); ?>">
-
+    <form action="index.php">
       <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
-
     </form>
 
     <a href="https://github.com/dmoster" target="_blank">github.com/dmoster</a>

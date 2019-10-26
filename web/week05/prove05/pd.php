@@ -82,11 +82,8 @@ $user_id = $user['user_id'];
   
     <footer>
 
-      <form action="<?php session_unset();
-                          session_destroy(); ?>">
-
+      <form action="index.php">
         <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
-
       </form>
   
       <a href="https://github.com/dmoster" target="_blank">github.com/dmoster</a>
