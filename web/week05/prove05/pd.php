@@ -62,7 +62,7 @@ $user_id = $user['user_id'];
     <main>
   
       <div id="intro">
-        <h1><?=$firstname;?>'s Device Mana<?=$user_id;?>gement</h1>
+        <h1><?=$firstname;?>'s Device Management</h1>
         <p class="lead">Below are all items listed in <?=$firstname;?> <?=$lastname;?>'s database.</p>
 
         <form action="add_devices.php" method="POST">

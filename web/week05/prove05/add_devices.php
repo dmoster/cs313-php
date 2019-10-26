@@ -99,7 +99,7 @@ $username = 'dmoster';
 
   <main>
     <div class="card">
-      <h1>Add a Dev<?=$username;?>ice</h1>
+      <h1>Add a Device</h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
@@ -138,7 +138,29 @@ $username = 'dmoster';
             $location_name = $row['location_name'];
 
             echo "<div class=\"input-group\"><input type=\"radio\" name=\"location\" id=\"loc$location_id\" value=\"$location_id\">
-                  <label for=\"loc$location_id\">$location_name</label>";
+                  <label for=\"loc$location_id\">$location_name</label></div>";
+          }
+        }
+        catch (PDOException $e) {
+          echo $e;
+          die();
+        }
+
+        ?>
+
+        <label for="floor">Floor</label>
+        <?php
+
+        try {
+          $stmt = $db->prepare("SELECT floor_id, floor_name FROM floors WHERE user_id=$user_id");
+          $stmt->execute();
+
+          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $floor_id = $row['floor_id'];
+            $floor_name = $row['floor_name'];
+
+            echo "<div class=\"input-group\"><input type=\"radio\" name=\"location\" id=\"floor$floor_id\" value=\"$floor_id\">
+                  <label for=\"floor$floor_id\">$floor_name</label></div>";
           }
         }
         catch (PDOException $e) {
