@@ -26,7 +26,11 @@ catch (PDOException $e) {
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
+  $device_type = $_POST['device_type'];
+  $location = $_POST['location'];
+  $floor = $_POST['floor'];
+
   if (empty($_POST["device_name"])) {
     $devNameErr = "Please enter a device name.";
   }
@@ -46,24 +50,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
 
   }
 
-  if (empty($_POST["floor"])) {
-    $floorErr = "Please enter a URL for the device.";
-  }
-  else {
-    $floor = test_input($_POST["floor"]);
+  if (!empty($_POST["device_name"]) && !empty($_POST["device_address"]) && !empty($_POST["location"]) && !empty($_POST["floor"])) {
 
-  }
+    try {
+      $q = 'INSERT INTO devices(user_id, floor_id, device_description, device_notes, device_address, device_type) VALUES(:user_id, :floor_id, :device_name, :device_description, :device_address, :device_type)';
+      $stmt = $db->prepare($q);
 
-  if (empty($_POST["location"])) {
-    $locationErr = "Please enter a URL for the device.";
-  }
-  else {
-    $floor = test_input($_POST["location"]);
+      $stmt->bindValue(':user_id', $user_id);
+      $stmt->bindValue(':floor_id', $floor_id);
+      $stmt->bindValue(':device_name', $device_name);
+      $stmt->bindValue(':device_description', $device_description);
+      $stmt->bindValue(':device_address', $device_address);
+      $stmt->bindValue(':device_type', $device_type);
 
-  }
-
-  if (!empty($_POST["device_name"]) && !empty($_POST["device_address"]) && !empty($_POST["floor"]) && !empty($_POST["location"])) {
-
+      $stmt->execute();
+    }
+    catch (Exception $e) {
+      echo "Something went wrong. Please try again.";
+      die();
+    }
   }
 }
 
