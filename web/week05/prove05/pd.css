@@ -280,6 +280,10 @@ footer {
   font-size: 0.8em;
 }
 
+#device-adder {
+  flex-direction: column;
+}
+
 #add-device {
   display: flex;
   flex-direction: column;

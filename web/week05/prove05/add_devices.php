@@ -189,7 +189,9 @@ function test_input($data) {
   <footer>
 
     <form action="<?php session_unset();
-                        session_destroy(); ?>">
+                        session_destroy();
+                        header('Location: index.php');
+                        die(); ?>">
 
       <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
 
