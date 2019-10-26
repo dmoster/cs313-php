@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['location'])) {
       $stmt = $db->prepare($q);
 
       $stmt->bindValue(':user_id', $user_id);
-      $stmt->bindValue(':floor_id', $floor_id);
+      $stmt->bindValue(':floor_id', $floor);
       $stmt->bindValue(':device_name', $device_name);
       $stmt->bindValue(':device_description', $device_description);
       $stmt->bindValue(':device_address', $device_address);
