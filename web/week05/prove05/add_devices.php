@@ -16,7 +16,7 @@ try {
 
   $user = $user_row->fetch(PDO::FETCH_ASSOC);
 
-  $user_id = (int)$user['user_id'];
+  $user_id = $user['user_id'];
   $_SESSION['user_id'] = $user_id;
 }
 catch (PDOException $e) {
