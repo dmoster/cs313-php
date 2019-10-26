@@ -310,6 +310,10 @@ footer {
   background-color: grey;
 }
 
+.required {
+  color: tomato;
+}
+
 #logout {
   border: 1px solid tomato;
   color: tomato;

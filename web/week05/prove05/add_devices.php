@@ -103,14 +103,14 @@ $username = 'dmoster';
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
-        <label for="device_name">Name</label>
+        <label for="device_name">Name<span class="required">*</span></label>
         <input id="device_name" type="text" name="device_name" placeholder="Mac Mini" value="<?=$device_name;?>">
         <span class="error"><?=$devNameErr;?></span>
 
         <label for="device_description">Description</label>
         <input id="device_description" type="text" name="device_description" placeholder="Dev box and productivity machine" value="<?=$device_description;?>">
 
-        <label for="device_address">URL/IP Address</label>
+        <label for="device_address">URL/IP Address<span class="required">*</span></label>
         <input id="device_address" type="text" name="device_address" placeholder="10.20.5.41" value="<?=$device_address;?>">
         <span class="error"><?=$devAddrErr;?></span>
 
@@ -170,7 +170,7 @@ $username = 'dmoster';
 
         ?>
 
-        <button class="btn" type="submit" name="add">Add</button>
+        <button class="btn" type="submit" name="add_to" value="$username">Add</button>
       </form>
     </div>
   </main>
