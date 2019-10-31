@@ -1,6 +1,7 @@
 <?php
 
-require 'src/meta.php';
+session_start();
+require 'src/db_connect.php';
 
 $un = $pw = '';
 
