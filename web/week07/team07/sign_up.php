@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       die();
     }
     catch (Exception $e) {
-      echo 'Something went wrong. Please try again.';
+      echo "Something went wrong. Please try again. $pw";
       die();
     }
   }
