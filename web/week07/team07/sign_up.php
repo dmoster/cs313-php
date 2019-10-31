@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $stmt->execute();
 
       
-      die();
+      
     }
     catch (Exception $e) {
       echo "Something went wrong. Please try again.";
