@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/meta.php';
+require 'src/meta.php';
 
 $un = $pw = '';
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       die();
     }
     catch (Exception $e) {
-      echo "Something went wrong. Please try again. $pw";
+      echo "Something went wrong. Please try again.";
       die();
     }
   }
