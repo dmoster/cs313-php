@@ -62,7 +62,7 @@ function test_input($data) {
 </head>
 <body>
   <h1>Sign Up</h1>
-  <form action="<?php echo htmlspechialchars($_SERVER['PHP_SELFT']); ?>" method="POST">
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
     <input type="text" name="username" id="username" placeholder="Username" value="<?=$un;?>">
     <span class="error"><?=$unErr;?></span>
     <input type="password" name="password" id="password" placeholder="Password" value="<?=$pw;?>">
