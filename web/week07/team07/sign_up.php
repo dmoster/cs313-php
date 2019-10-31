@@ -1,4 +1,3 @@
-// Sign Up
 <?php
 
 require_once 'src/meta.php';

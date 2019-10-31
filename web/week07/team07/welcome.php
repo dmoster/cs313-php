@@ -1,4 +1,3 @@
-// Welcome
 <?php
 
 require_once 'src/meta.php';
