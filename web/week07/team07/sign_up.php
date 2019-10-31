@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $stmt->execute();
 
-      header('Location: sign_in.php');
+      
       die();
     }
     catch (Exception $e) {
