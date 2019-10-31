@@ -57,8 +57,8 @@
       </div>
       <div class="week">
         <h2>Week 07</h2>
-        <a href="#" class="btn btn-primary">Teach 07 - Coming Soon</a>
-        <a href="#" class="btn btn-secondary">Prove 07 - Coming Soon</a>
+        <a href="week07/team07/" class="btn btn-primary">Teach 07 - Login Page</a>
+        <a href="week07/prove07/" class="btn btn-secondary">Prove 07 - Project 1</a>
       </div>
       <div class="week">
         <h2>Week 08</h2>
