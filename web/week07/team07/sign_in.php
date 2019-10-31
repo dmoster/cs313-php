@@ -1,6 +1,8 @@
 <?php
 
-require_once 'src/meta.php';
+session_start();
+require 'src/db_connect.php';
+$db = getDatabase();
 
 $un = $pw = $dbPw = '';
 $user = null;

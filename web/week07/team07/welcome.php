@@ -1,6 +1,8 @@
 <?php
 
-require_once 'src/meta.php';
+session_start();
+require 'src/db_connect.php';
+$db = getDatabase();
 
 if (empty($_SESSION['username'])) {
   header('Location: sign_in.php');

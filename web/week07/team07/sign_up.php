@@ -2,6 +2,7 @@
 
 session_start();
 require 'src/db_connect.php';
+$db = getDatabase();
 
 $un = $pw = '';
 
@@ -25,12 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     try {
       $q = 'INSERT INTO users_t7(username, password) VALUES(:username, :password)';
-      // $stmt = $db->prepare($q);
+      $stmt = $db->prepare($q);
 
-      // $stmt->bindValue(':username', $un);
-      // $stmt->bindValue(':password', $pw);
+      $stmt->bindValue(':username', $un);
+      $stmt->bindValue(':password', $pw);
 
-      // $stmt->execute();
+      $stmt->execute();
 
       header('Location: sign_in.php');
       die();
