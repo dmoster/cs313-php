@@ -36,8 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       header('Location: sign_in.php');
       die();
     }
-    catch (Exception $e) {
+    catch (PDOException $e) {
       echo "Something went wrong. Please try again.";
+      echo $e;
       die();
     }
   }
