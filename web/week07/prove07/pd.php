@@ -71,10 +71,10 @@ $user_id = $user['user_id'];
         <p class="lead">Below are all items listed in <?=$firstname;?> <?=$lastname;?>'s database.</p>
 
         <form action="add_devices.php" method="POST">
-          <button class="btn" name="add_to" value="<?=$username;?>">Add a Device</button>
+          <button class="btn" name="add_to" value="<?=$username;?>">Add Device</button>
         </form>
         <form action="add_location.php" method="POST">
-          <button class="btn" name="add_to" value="<?=$username;?>">Add a Location</button>
+          <button class="btn" name="add_to" value="<?=$username;?>">Add Location</button>
         </form>
       </div>
   
