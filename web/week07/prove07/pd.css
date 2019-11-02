@@ -339,6 +339,7 @@ footer {
   border: 1px solid mediumseagreen;
   background-color: transparent;
   font-size: 1em;
+  margin-bottom: 2px;
 }
 
 #intro .btn:hover {
