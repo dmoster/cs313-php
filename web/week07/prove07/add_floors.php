@@ -28,7 +28,7 @@ try {
   $_SESSION['user_id'] = $user_id;
 }
 catch (PDOException $e) {
-  echo "Something went wrong. Please try again.";
+  echo "Something went wrong. Please try again. $e";
   die();
 }
 
@@ -41,7 +41,7 @@ if (!isset($_SESSION['location_id'])) {
     $_SESSION['location_id'] = $location['location_id'];
   }
   catch (PDOException $e) {
-    echo "Something went wrong. Please try again.";
+    echo "Something went wrong. Please try again. $e";
     die();
   }
 }
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['working_floor'] = $floor_name;
     }
     catch (Exception $e) {
-      echo "Something went wrong. Please try again.";
+      echo "Something went wrong. Please try again. $e";
       die();
     }
   }
