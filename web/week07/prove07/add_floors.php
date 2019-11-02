@@ -8,7 +8,11 @@ $db = getDatabase();
 $user_id;
 $user;
 
-if (isset($_POST['add_to'])) {
+if (empty($_POST['add_to']) && empty($_SESSION['username'])) {
+  header('Location: sign_in.php');
+  die();
+}
+else if (isset($_POST['add_to'])) {
   $_SESSION['username'] = $_POST['add_to'];
 }
 $username = $_SESSION['username'];
