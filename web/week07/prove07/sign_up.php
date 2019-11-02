@@ -90,6 +90,7 @@ function test_input($data) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
   <link rel="stylesheet" href="pd.css">
+  <script src="validate.js"></script>
   
   <title>Sign Up</title>
 </head>
