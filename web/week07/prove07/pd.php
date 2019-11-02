@@ -5,12 +5,14 @@ session_start();
 require "db_connect.php";
 $db = getDatabase();
 
-if (!empty($_POST['add_username'])) {
-  $username = $_POST['add_username'];
+if (empty($_POST['add_username']) && empty($_SESSION['username'])) {
+  header('Location: sign_in.php');
+  die();
 }
-else {
-  $username = $_SESSION['username'];
+else if (isset($_POST['add_username'])) {
+  $_SESSION['username'] = $_POST['add_username'];
 }
+$username = $_SESSION['username'];
 
 $user_row = $db->prepare("SELECT firstname, lastname, user_id FROM users WHERE username='$username' LIMIT 1");
 $user_row->execute();
