@@ -45,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($un != '' && $pw != '' && $email != '' && $firstname != '' && $lastname != '') {
     $pw = password_hash($pw, PASSWORD_DEFAULT);
-    echo $pw;
 
     try {
       $q = 'INSERT INTO users(username, user_password, user_email, firstname, lastname) VALUES(:username, :user_password, :user_email, :firstname, :lastname)';
@@ -89,21 +88,25 @@ function test_input($data) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sign Up</title>
 </head>
-<body>
-  <h1>Sign Up</h1>
-  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-    <input type="text" name="firstname" id="firstname" placeholder="First name" value="<?=$firstname;?>">
-    <span class="error"><?=$fnErr;?></span>
-    <input type="text" name="lastname" id="lastname" placeholder="Last name" value="<?=$lastname;?>">
-    <input type="email" name="user_email" id="email" placeholder="Email" value="<?=$email;?>">
-    <span class="error"><?=$emailErr;?></span>
-    <span class="error"><?=$lnErr;?></span>
-    <input type="text" name="username" id="username" placeholder="Username" value="<?=$un;?>">
-    <span class="error"><?=$unErr;?></span>
-    <input type="password" name="user_password" id="password" placeholder="Password" value="<?=$pw;?>">
-    <span class="error"><?=$pwErr;?></span>
-    <button class="btn" type="submit">Sign Up</button>
-  </form>
+<body id="get-started">
+  <main>
+    <div class="card">
+      <h1>Sign Up</h1>
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+        <input type="text" name="firstname" id="firstname" placeholder="First name" value="<?=$firstname;?>">
+        <span class="error"><?=$fnErr;?></span>
+        <input type="text" name="lastname" id="lastname" placeholder="Last name" value="<?=$lastname;?>">
+        <input type="email" name="user_email" id="email" placeholder="Email" value="<?=$email;?>">
+        <span class="error"><?=$emailErr;?></span>
+        <span class="error"><?=$lnErr;?></span>
+        <input type="text" name="username" id="username" placeholder="Username" value="<?=$un;?>">
+        <span class="error"><?=$unErr;?></span>
+        <input type="password" name="user_password" id="password" placeholder="Password" value="<?=$pw;?>">
+        <span class="error"><?=$pwErr;?></span>
+        <button class="btn" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </main>
 
   <a href="sign_in.php">Already a user?</a>
 </body>
