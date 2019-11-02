@@ -111,9 +111,9 @@ function test_input($data) {
         <span class="error"><?=$pwErr;?></span>
         <button class="btn" type="submit" id="sign_up_btn">Sign Up</button>
       </form>
+      <a href="sign_in.php" class="btn">Already a user?</a>
     </div>
   </main>
 
-  <a href="sign_in.php" class="btn">Already a user?</a>
 </body>
 </html>
