@@ -8,8 +8,10 @@ $db = getDatabase();
 $user_id;
 $user;
 
-$username = $_POST['add_to'];
-$_SESSION['username'] = $username;
+if (isset($_POST['add_to'])) {
+  $_SESSION['username'] = $_POST['add_to'];
+}
+$username = $_SESSION['username'];
 
 try {
   $user_row = $db->prepare("SELECT user_id FROM users WHERE username='$username' LIMIT 1");

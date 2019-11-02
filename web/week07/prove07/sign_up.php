@@ -60,12 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $_SESSION['username'] = $un;
 
-      header('Location: sign_in.php');
+      header('Location: add_location.php');
       die();
     }
     catch (PDOException $e) {
       echo "Something went wrong. Please try again.";
-      echo $e;
       die();
     }
   }
