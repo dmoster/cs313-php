@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pwErr = "Please enter a password.";
   }
   else {
-    $pw = test_input($_POST['password']);
+    $pw = test_input($_POST['user_password']);
   }
   
   if (empty($_POST['user_email'])) {
