@@ -58,7 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $stmt->execute();
 
-      header('Location: sign_in0.php');
+      $_SESSION['username'] = $un;
+
+      header('Location: sign_in.php');
       die();
     }
     catch (PDOException $e) {
@@ -105,8 +107,9 @@ function test_input($data) {
         <input type="text" name="username" id="username" placeholder="Username" value="<?=$un;?>">
         <span class="error"><?=$unErr;?></span>
         <input type="password" name="user_password" id="password" placeholder="Password" value="<?=$pw;?>">
+        <input type="password" id="pw_verify" placeholder="Reenter password" onkeyup="comparePw()">
         <span class="error"><?=$pwErr;?></span>
-        <button class="btn" type="submit">Sign Up</button>
+        <button class="btn" type="submit" id="sign_up_btn">Sign Up</button>
       </form>
     </div>
   </main>

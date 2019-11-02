@@ -82,7 +82,7 @@ $user_id = $user['user_id'];
   
     <footer>
 
-      <form action="index.php">
+      <form action="sign_in.php">
         <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
       </form>
   

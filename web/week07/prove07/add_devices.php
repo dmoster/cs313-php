@@ -188,7 +188,7 @@ function test_input($data) {
 
   <footer>
 
-    <form action="index.php">
+    <form action="sign_in.php">
       <button class="btn" type="submit" id="logout">Sign out <span id="username"><?=$username?></button>
     </form>
 
