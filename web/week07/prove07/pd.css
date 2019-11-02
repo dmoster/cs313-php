@@ -377,9 +377,12 @@ footer {
     display: block;
   }
 
+  main {
+    width: 100%;
+  }
+
   .card {
     border-radius: 0;
-    width: 100%;
   }
  
   #aside-left {

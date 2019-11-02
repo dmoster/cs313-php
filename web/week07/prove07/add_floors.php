@@ -30,21 +30,22 @@ catch (PDOException $e) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  if (empty($_POST["location_name"])) {
-    $locNameErr = "Please enter a location name.";
+  if (empty($_POST["floor_name"])) {
+    $locNameErr = "Please enter a floor name.";
   }
   else {
-    $location_name = test_input($_POST["location_name"]);
+    $floor_name = test_input($_POST["floor_name"]);
   }
 
-  if (!empty($_POST["location_name"])) {
+  if (!empty($_POST["floor_name"])) {
 
     try {
-      $q = 'INSERT INTO locations(user_id, location_name) VALUES(:user_id, :location_name)';
+      $q = 'INSERT INTO floors(user_id, location_id, floor_name) VALUES(:user_id, :location_id, :floor_name)';
       $stmt = $db->prepare($q);
 
       $stmt->bindValue(':user_id', $user_id);
-      $stmt->bindValue(':location_name', $location_name);
+      $stmt->bindValue(':location_id', $location_id);
+      $stmt->bindValue(':floor_name', $floor_name);
 
       $stmt->execute();
 
@@ -54,16 +55,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $location = $location_row->fetch(PDO::FETCH_ASSOC);
         $_SESSION['location_id'] = $location['location_id'];
-
-        header('Location: add_floors.php');
-        die();
       }
       catch (PDOException $e) {
         echo "Something went wrong. Please try again.";
         die();
       }
 
-      $_SESSION['working_location'] = $location_name;
+      $_SESSION['working_floor'] = $floor_name;
     }
     catch (Exception $e) {
       echo "Something went wrong. Please try again.";
@@ -108,13 +106,16 @@ function test_input($data) {
     </div>
 
     <div class="card">
-      <h1>Add a Location</h1>
+      <h1>Add Floors</h1>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
-        <label for="location_name">Name<span class="required">*</span></label>
-        <input id="location_name" type="text" name="location_name" placeholder="Home" value="<?=$location_name;?>">
-        <span class="error"><?=$locNameErr;?></span>
+        <label for="location_name">Location</label>
+        <input id="location_name" type="text" name="location_name" placeholder="Home" value="<?=$location_name;?>" readonly>
+
+        <label for="floor_name">Name<span class="required">*</span></label>
+        <input id="floor_name" type="text" name="floor_name" placeholder="1st Floor" value="<?=$floor_name;?>">
+        <span class="error"><?=$floorNameErr;?></span>
 
         <button class="btn" type="submit" name="add_to" value="<?=$username;?>">Add</button>
       </form>
