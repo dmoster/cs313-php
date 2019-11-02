@@ -1,7 +1,7 @@
 // Compare passwords
 function comparePw() {
   let pwField1 = document.getElementById('password');
-  let pwField2 = document.getElementById('verify_pw');
+  let pwField2 = document.getElementById('pw_verify');
   let signUpBtn = document.getElementById('sign_up_btn');
 
   const pw1 = pwField1.value;
