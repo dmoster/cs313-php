@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($un != '' && $pw != '' && $email != '' && $firstname != '' && $lastname != '') {
     $pw = password_hash($pw, PASSWORD_DEFAULT);
+    echo $pw;
 
     try {
       $q = 'INSERT INTO users(username, user_password, user_email, firstname, lastname) VALUES(:username, :user_password, :user_email, :firstname, :lastname)';
