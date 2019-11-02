@@ -101,7 +101,7 @@ function test_input($data) {
   <link rel="stylesheet" href="pd.css"/>
   <script src="https://kit.fontawesome.com/599e60a037.js" crossorigin="anonymous"></script>
 
-  <title>Add a Location</title>
+  <title>Add Floors</title>
 
 </head>
 <body id="device-adder">
@@ -115,6 +115,7 @@ function test_input($data) {
 
     <div class="card">
       <h1>Add Floors</h1>
+      <p class="lead">Each location is divided up into sections&#8212;typically, we call them <em>floors</em>. Add floors to this location below.</p>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 

@@ -73,6 +73,9 @@ $user_id = $user['user_id'];
         <form action="add_devices.php" method="POST">
           <button class="btn" name="add_to" value="<?=$username;?>">Add a Device</button>
         </form>
+        <form action="add_location.php" method="POST">
+          <button class="btn" name="add_to" value="<?=$username;?>">Add a Location</button>
+        </form>
       </div>
   
       <div id="device-list"></div>

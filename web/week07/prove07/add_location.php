@@ -110,6 +110,7 @@ function test_input($data) {
 
     <div class="card">
       <h1>Add a Location</h1>
+      <p class="lead">Where do you keep your devices?</p>
 
       <form id="add-device" class="radius-tr" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
