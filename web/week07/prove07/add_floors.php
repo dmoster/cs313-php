@@ -45,6 +45,7 @@ if (!isset($_SESSION['location_id'])) {
     die();
   }
 }
+$location_id = $_SESSION['location_id'];
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
