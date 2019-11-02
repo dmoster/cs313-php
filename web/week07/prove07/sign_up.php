@@ -86,6 +86,9 @@ function test_input($data) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="pd.css">
+  
   <title>Sign Up</title>
 </head>
 <body id="get-started">
@@ -108,6 +111,6 @@ function test_input($data) {
     </div>
   </main>
 
-  <a href="sign_in.php">Already a user?</a>
+  <a href="sign_in.php" class="btn">Already a user?</a>
 </body>
 </html>

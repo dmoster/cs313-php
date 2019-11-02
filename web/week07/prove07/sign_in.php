@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if (password_verify($pw, $dbPw)) {
         $_SESSION['username'] = $un;
 
-        header('Location: welcome.php');
+        header('Location: pd.php');
         die();
       }
       else {

@@ -180,6 +180,8 @@ tr:nth-child(even) {
   border-radius: 3px;
   color: grey;
   text-decoration: none;
+  text-align: center;
+  padding: 10px;
 }
 
 .btn:hover, aside nav li a:hover, .inline-btn:hover, #export_btn:hover, .aside_btn:hover {
