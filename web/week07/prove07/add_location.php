@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $location = $location_row->fetch(PDO::FETCH_ASSOC);
         $_SESSION['location_id'] = $location['location_id'];
+        $_SESSION['location_name'] = $location_name;
 
         header('Location: add_floors.php');
         die();

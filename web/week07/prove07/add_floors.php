@@ -13,6 +13,11 @@ if (isset($_POST['add_to'])) {
 }
 $username = $_SESSION['username'];
 
+if (isset($_POST['location_name'])) {
+  $_SESSION['location_name'] = $_POST['location_name'];
+}
+$location_name = $_SESSION['location_name'];
+
 try {
   $user_row = $db->prepare("SELECT user_id FROM users WHERE username='$username' LIMIT 1");
   $user_row->execute();
@@ -23,8 +28,22 @@ try {
   $_SESSION['user_id'] = $user_id;
 }
 catch (PDOException $e) {
-  echo $e;
+  echo "Something went wrong. Please try again.";
   die();
+}
+
+if (!isset($_SESSION['location_id'])) {
+  try {
+    $location_row = $db->prepare("SELECT location_id FROM locations WHERE location_name='$location_name' AND user_id=$user_id LIMIT 1");
+    $location_row->execute();
+
+    $location = $location_row->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['location_id'] = $location['location_id'];
+  }
+  catch (PDOException $e) {
+    echo "Something went wrong. Please try again.";
+    die();
+  }
 }
 
 
@@ -48,18 +67,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmt->bindValue(':floor_name', $floor_name);
 
       $stmt->execute();
-
-      try {
-        $location_row = $db->prepare("SELECT location_id FROM locations WHERE location_name='$location_name' LIMIT 1");
-        $location_row->execute();
-
-        $location = $location_row->fetch(PDO::FETCH_ASSOC);
-        $_SESSION['location_id'] = $location['location_id'];
-      }
-      catch (PDOException $e) {
-        echo "Something went wrong. Please try again.";
-        die();
-      }
 
       $_SESSION['working_floor'] = $floor_name;
     }
