@@ -110,7 +110,7 @@ function test_input($data) {
         <input type="password" name="user_password" id="password" placeholder="Password" value="<?=$pw;?>">
         <input type="password" id="pw_verify" placeholder="Reenter password" onkeyup="comparePw()">
         <span class="error"><?=$pwErr;?></span>
-        <button class="btn" type="submit" id="sign_up_btn">Sign Up</button>
+        <button class="btn" type="submit" id="sign_up_btn" disabled>Sign Up</button>
       </form>
       <a href="sign_in.php" class="btn">Already a user?</a>
     </div>

@@ -9,7 +9,7 @@ function comparePw() {
 
   if (pw1 === pw2) {
     pwField2.style.color = 'mediumseagreen';
-    signUpBtn.style.display = 'block';
+    signUpBtn.disabled = false;
   }
   else {
     pwField2.style.color = 'tomato';
