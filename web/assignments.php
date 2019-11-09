@@ -63,7 +63,7 @@
       <div class="week">
         <h2>Week 08</h2>
         <a href="week08/team08/" class="btn btn-primary">Teach 08 - learnyounode</a>
-        <a href="#" class="btn btn-secondary">Prove 08 - Coming Soon</a>
+        <a href="week08/prove08/server.js" class="btn btn-secondary">Prove 08 - Node.js HTTP Server</a>
       </div>
       <div class="week">
         <h2>Week 09</h2>
